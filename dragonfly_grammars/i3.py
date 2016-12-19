@@ -55,8 +55,11 @@ class WorkspaceRules(MappingRule):
         IntegerRef('n', 1, 13),
         Choice(
             'direction',
-            {direction: direction for direction in [
-                _('left'), _('right'), _('up'), _('down')]}),
+            {
+                _('left'): 'left',
+                _('right'): 'right',
+                _('up'): 'up',
+                _('down'): 'down'}),
         ]
 
 GRAMMAR = None
