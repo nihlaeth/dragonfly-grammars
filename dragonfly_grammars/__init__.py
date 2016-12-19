@@ -14,18 +14,18 @@ gettext.bindtextdomain(
 gettext.textdomain('dragonfly_grammars')
 ENX = gettext.translation('dragonfly_grammars', languages=['en'])
 NLD = gettext.translation('dragonfly_grammars', languages=['nl'])
-set_translator(ENX.gettext)
+set_translator(ENX.lgettext)
 
 def load_grammars():
     """Set language, reload grammar modules and register grammars."""
     lang = natlinkstatus.NatlinkStatus().getLanguage()
     if lang == 'enx':
-        set_translator(ENX.gettext)
+        set_translator(ENX.lgettext)
     elif lang == 'nld':
-        set_translator(NLD.gettext)
+        set_translator(NLD.lgettext)
     else:
         # fallback
-        set_translator(ENX.gettext)
+        set_translator(ENX.lgettext)
     dragonfly_grammars.aenea_ = reload(
         dragonfly_grammars.aenea_)
     dragonfly_grammars.aenea_.load()
