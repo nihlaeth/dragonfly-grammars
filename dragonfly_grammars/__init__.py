@@ -1,19 +1,20 @@
 """Load and unload grammars and handle language setting."""
 import gettext
+import os.path
 from pkg_resources import resource_filename, Requirement
 import natlinkstatus
 from dragonfly_grammars.common import set_translator
 import dragonfly_grammars.aenea_
 import dragonfly_grammars.i3
 import dragonfly_grammars.global_
-gettext.bindtextdomain(
-    'dragonfly_grammars',
-    resource_filename(
-        Requirement.parse('dragonfly_grammars'),
-        'translations'))
-gettext.textdomain('dragonfly_grammars')
-ENX = gettext.translation('dragonfly_grammars', languages=['en'])
-NLD = gettext.translation('dragonfly_grammars', languages=['nl'])
+
+_LOCALEDIR = os.path.join(resource_filename(
+    Requirement.parse('dragonfly_grammars'),
+    'dragonfly_grammars/translations'), 'language')
+ENX = gettext.translation(
+    'dragonfly_grammars', _LOCALEDIR, languages=['en'])
+NLD = gettext.translation(
+    'dragonfly_grammars', _LOCALEDIR, languages=['nl'])
 set_translator(ENX.lgettext)
 
 def load_grammars():
