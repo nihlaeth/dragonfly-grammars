@@ -1,0 +1,133 @@
+# English translations for dragonfly_grammars.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the dragonfly_grammars
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dragonfly_grammars 1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-12-19 11:53+0100\n"
+"PO-Revision-Date: 2016-12-19 11:29+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: dragonfly_grammars/aenea_.py:36
+msgid "disable proxy server"
+msgstr "disable proxy server"
+
+#: dragonfly_grammars/aenea_.py:43
+msgid "enable proxy server"
+msgstr "enable proxy server"
+
+#: dragonfly_grammars/aenea_.py:53
+msgid "set proxy server to <proxy>"
+msgstr "set proxy server to <proxy>"
+
+#: dragonfly_grammars/global_.py:13
+msgid "escape"
+msgstr "escape"
+
+#: dragonfly_grammars/global_.py:14
+msgid "[<n>] backspace[s]"
+msgstr "[<n>] backspace[s]"
+
+#: dragonfly_grammars/global_.py:15
+msgid "[<n>] enter[s]"
+msgstr "[<n>] enter[s]"
+
+#: dragonfly_grammars/global_.py:16
+msgid "[<n>] tab[s]"
+msgstr "[<n>] tab[s]"
+
+#: dragonfly_grammars/global_.py:17
+msgid "[<n>] space[s]"
+msgstr "[<n>] space[s]"
+
+#: dragonfly_grammars/global_.py:18
+msgid "[<n>] delete[s]"
+msgstr "[<n>] delete[s]"
+
+#: dragonfly_grammars/global_.py:20
+msgid "go [<n>] up"
+msgstr "go [<n>] up"
+
+#: dragonfly_grammars/global_.py:21
+msgid "go [<n>] down"
+msgstr "go [<n>] down"
+
+#: dragonfly_grammars/global_.py:22
+msgid "go [<n>] left"
+msgstr "go [<n>] left"
+
+#: dragonfly_grammars/global_.py:23
+msgid "go [<n>] right"
+msgstr "go [<n>] right"
+
+#: dragonfly_grammars/global_.py:24
+msgid "(go home|go to start)"
+msgstr "(go home|go to start)"
+
+#: dragonfly_grammars/global_.py:25
+msgid "go [to] end"
+msgstr "go [to] end"
+
+#: dragonfly_grammars/global_.py:26
+msgid "go [<n>] page[s] up"
+msgstr "go [<n>] page[s] up"
+
+#: dragonfly_grammars/global_.py:27
+msgid "go [<n>] page[s] down"
+msgstr "go [<n>] page[s] down"
+
+#: dragonfly_grammars/global_.py:29
+msgid "dictate <text>"
+msgstr "dictate <text>"
+
+#: dragonfly_grammars/i3.py:14
+msgid "open terminal"
+msgstr "open terminal"
+
+#: dragonfly_grammars/i3.py:16
+msgid "open process <text>"
+msgstr "open process <text>"
+
+#: dragonfly_grammars/i3.py:38
+msgid "workspace <n>"
+msgstr "workspace <n>"
+
+#: dragonfly_grammars/i3.py:39
+msgid "move [to] workspace <n>"
+msgstr "move [to] workspace <n>"
+
+#: dragonfly_grammars/i3.py:40
+msgid "window <direction>"
+msgstr "window <direction>"
+
+#: dragonfly_grammars/i3.py:41
+msgid "move window [to the] <direction>"
+msgstr "move window [to the] <direction>"
+
+#: dragonfly_grammars/i3.py:48
+msgid "left"
+msgstr "left"
+
+#: dragonfly_grammars/i3.py:48
+msgid "right"
+msgstr "right"
+
+#: dragonfly_grammars/i3.py:48
+msgid "up"
+msgstr "up"
+
+#: dragonfly_grammars/i3.py:48
+msgid "down"
+msgstr "down"
+
