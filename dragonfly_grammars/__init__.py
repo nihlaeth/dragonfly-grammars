@@ -2,6 +2,7 @@
 import gettext
 from pkg_resources import resource_filename, Requirement
 import natlinkstatus
+from dragonfly_grammars.common import set_translator
 import dragonfly_grammars.aenea_
 import dragonfly_grammars.i3
 import dragonfly_grammars.global_
@@ -13,18 +14,18 @@ gettext.bindtextdomain(
 gettext.textdomain('dragonfly_grammars')
 ENX = gettext.translation('dragonfly_grammars', languages=['en'])
 NLD = gettext.translation('dragonfly_grammars', languages=['nl'])
-ENX.install()
+set_translator(ENX.gettext)
 
 def load_grammars():
     """Set language, reload grammar modules and register grammars."""
     lang = natlinkstatus.NatlinkStatus().getLanguage()
     if lang == 'enx':
-        ENX.install()
+        set_translator(ENX.gettext)
     elif lang == 'nld':
-        NLD.install()
+        set_translator(NLD.gettext)
     else:
         # fallback
-        ENX.install()
+        set_translator(ENX.gettext)
     dragonfly_grammars.aenea_ = reload(
         dragonfly_grammars.aenea_)
     dragonfly_grammars.aenea_.load()

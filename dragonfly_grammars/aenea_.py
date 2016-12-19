@@ -33,6 +33,8 @@ except ImportError:
     print 'Unable to import Aenea client-side modules.'
     raise
 
+from dragonfly_grammars.common import _
+
 class DisableRule(dragonfly.CompoundRule):
 
     """Disable remote."""

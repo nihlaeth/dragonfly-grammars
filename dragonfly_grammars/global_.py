@@ -7,6 +7,7 @@ from aenea import (
     IntegerRef,
     Dictation)
 from dragonfly_grammars.text_to_key import text_to_key
+from dragonfly_grammars.common import _
 
 
 class BasicKeyboardRule(MappingRule):
