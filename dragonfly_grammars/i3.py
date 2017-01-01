@@ -8,8 +8,7 @@ from aenea import (
     Choice,
     IntegerRef,
     Dictation)
-from dragonfly_grammars.text_to_key import text_to_key
-from dragonfly_grammars.common import _
+from dragonfly_grammars.common import _, execute_keystr
 
 class OpenProcessRule(MappingRule):
 
@@ -18,7 +17,7 @@ class OpenProcessRule(MappingRule):
     mapping = {
         _('open terminal'): Key('w-t'),
         # TODO: treat text like basic commandline
-        _('open process <text>'): Key('w-m') + Function(text_to_key),
+        _('open process <text>'): Key('w-m') + Function(execute_keystr),
     }
     extras = [Dictation('text')]
 

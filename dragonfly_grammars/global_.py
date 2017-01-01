@@ -6,8 +6,7 @@ from aenea import (
     Function,
     IntegerRef,
     Dictation)
-from dragonfly_grammars.text_to_key import text_to_key
-from dragonfly_grammars.common import _
+from dragonfly_grammars.common import _, execute_keystr
 
 
 class BasicKeyboardRule(MappingRule):
@@ -31,7 +30,7 @@ class BasicKeyboardRule(MappingRule):
         _('go [<n>] page[s] up'): Key('pgup:%(n)d'),
         _('go [<n>] page[s] down'): Key('pgdown:%(n)d'),
 
-        _('dictate <text>'): Function(text_to_key),
+        _('dictate <text>'): Function(execute_keystr),
     }
     extras = [Dictation('text'), IntegerRef('n', 1, 100)]
     defaults = {
