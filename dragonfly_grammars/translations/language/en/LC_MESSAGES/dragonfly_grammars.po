@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-04 17:00+0100\n"
+"POT-Creation-Date: 2017-01-04 19:08+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -347,67 +347,87 @@ msgstr "zulu"
 msgid "cap <lowercase_letter>"
 msgstr "cap <lowercase_letter>"
 
-#: dragonfly_grammars/global_.py:156
+#: dragonfly_grammars/global_.py:157
 msgid "spell <characters>"
 msgstr "spell <characters>"
 
-#: dragonfly_grammars/global_.py:170
+#: dragonfly_grammars/global_.py:175
+msgid "control"
+msgstr "control"
+
+#: dragonfly_grammars/global_.py:176
+msgid "shift"
+msgstr "shift"
+
+#: dragonfly_grammars/global_.py:177
+msgid "alt"
+msgstr "alt"
+
+#: dragonfly_grammars/global_.py:178
+msgid "(command|super)"
+msgstr "(command|super)"
+
+#: dragonfly_grammars/global_.py:187
+msgid "press [<modifiers>] <character>"
+msgstr "press [<modifiers>] <character>"
+
+#: dragonfly_grammars/global_.py:209
 msgid "escape"
 msgstr "escape"
 
-#: dragonfly_grammars/global_.py:171
+#: dragonfly_grammars/global_.py:210
 msgid "[<n>] backspace[s]"
 msgstr "[<n>] backspace[s]"
 
-#: dragonfly_grammars/global_.py:172
+#: dragonfly_grammars/global_.py:211
 msgid "[<n>] enter[s]"
 msgstr "[<n>] enter[s]"
 
-#: dragonfly_grammars/global_.py:173
+#: dragonfly_grammars/global_.py:212
 msgid "[<n>] tab[s]"
 msgstr "[<n>] tab[s]"
 
-#: dragonfly_grammars/global_.py:174
+#: dragonfly_grammars/global_.py:213
 msgid "[<n>] space[s]"
 msgstr "[<n>] space[s]"
 
-#: dragonfly_grammars/global_.py:175
+#: dragonfly_grammars/global_.py:214
 msgid "[<n>] delete[s]"
 msgstr "[<n>] delete[s]"
 
-#: dragonfly_grammars/global_.py:177
+#: dragonfly_grammars/global_.py:216
 msgid "go [<n>] up"
 msgstr "go [<n>] up"
 
-#: dragonfly_grammars/global_.py:178
+#: dragonfly_grammars/global_.py:217
 msgid "go [<n>] down"
 msgstr "go [<n>] down"
 
-#: dragonfly_grammars/global_.py:179
+#: dragonfly_grammars/global_.py:218
 msgid "go [<n>] left"
 msgstr "go [<n>] left"
 
-#: dragonfly_grammars/global_.py:180
+#: dragonfly_grammars/global_.py:219
 msgid "go [<n>] right"
 msgstr "go [<n>] right"
 
-#: dragonfly_grammars/global_.py:181
+#: dragonfly_grammars/global_.py:220
 msgid "(go home|go to start)"
 msgstr "(go home|go to start)"
 
-#: dragonfly_grammars/global_.py:182
+#: dragonfly_grammars/global_.py:221
 msgid "go [to] end"
 msgstr "go [to] end"
 
-#: dragonfly_grammars/global_.py:183
+#: dragonfly_grammars/global_.py:222
 msgid "go [<n>] page[s] up"
 msgstr "go [<n>] page[s] up"
 
-#: dragonfly_grammars/global_.py:184
+#: dragonfly_grammars/global_.py:223
 msgid "go [<n>] page[s] down"
 msgstr "go [<n>] page[s] down"
 
-#: dragonfly_grammars/global_.py:186
+#: dragonfly_grammars/global_.py:225
 msgid "dictate <text>"
 msgstr "dictate <text>"
 

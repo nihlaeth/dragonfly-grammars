@@ -123,7 +123,8 @@ class UppercaseCharacter(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return 's-{}'.format(extract_values(node, [LowercaseCharacter])[0])
+        return 's-{}'.format(extract_values(
+            node, [LowercaseCharacter], recurse=True)[0])
 
 class AnyCharacter(CompoundRule):
 
@@ -155,12 +156,50 @@ class SpellingRule(CompoundRule):
     def __init__(self, *args, **kwargs):
         self.spec = _('spell <characters>')
         self.extras = [Repetition(
-            name='characters', child=AnyCharacter, min=1, max=80)]
+            name='characters',
+            child=RuleRef(rule=AnyCharacter),
+            min=1,
+            max=80)]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
         return ','.join(extract_values(
             node, AnyCharacter, recurse=True))
+
+class Modifier(MappingRule):
+
+    """Modifier keys."""
+
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('control'): 'c',
+            _('shift'): 's',
+            _('alt'): 'a',
+            _('(command|super)'): 'w'}
+        MappingRule.__init__(self, *args, **kwargs)
+
+class PressRule(CompoundRule):
+
+    """Press keycombos."""
+
+    def __init__(self, *args, **kwargs):
+        # technically we should not accept uppercase chars here
+        self.spec = _('press [<modifiers>] <character>')
+        self.extras = [
+            Repetition(
+                name='modifiers',
+                child=RuleRef(rule=Modifier),
+                min=0,
+                max=4),
+            RuleRef(name='character', rule=AnyCharacter)]
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        char = extract_values(node, AnyCharacter, recurse=True)[0]
+        mods = extract_values(node, Modifier, recurse=True)
+        if len(mods) == 0:
+            return char
+        return "{}-{}".format("".join(mods), char)
 
 class BasicKeyboardRule(MappingRule):
 
@@ -198,6 +237,7 @@ def load():
     GRAMMAR = Grammar('global')
     GRAMMAR.add_rule(BasicKeyboardRule())
     GRAMMAR.add_rule(SpellingRule())
+    GRAMMAR.add_rule(PressRule())
     GRAMMAR.load()
 
     print 'global grammar: Loaded.'
