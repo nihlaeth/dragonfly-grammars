@@ -124,7 +124,7 @@ class UppercaseCharacter(CompoundRule):
 
     def value(self, node):
         return 's-{}'.format(extract_values(
-            node, [LowercaseCharacter], recurse=True)[0])
+            node, LowercaseCharacter, recurse=True)[0])
 
 class AnyCharacter(CompoundRule):
 
@@ -147,7 +147,7 @@ class AnyCharacter(CompoundRule):
         if len(uppercase) > 0:
             return uppercase[0]
         return extract_values(
-            node, [LowercaseCharacter, Symbol, Number], recurse=True)[0]
+            node, (LowercaseCharacter, Symbol, Number), recurse=True)[0]
 
 class SpellingRule(CompoundRule):
 
