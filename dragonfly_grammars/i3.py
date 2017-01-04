@@ -14,12 +14,14 @@ class OpenProcessRule(MappingRule):
 
     """Rules for opening process."""
 
-    mapping = {
-        _('open terminal'): Key('w-t'),
-        # TODO: treat text like basic commandline
-        _('open process <text>'): Key('w-m') + Function(execute_keystr),
-    }
-    extras = [Dictation('text')]
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('open terminal'): Key('w-t'),
+            # TODO: treat text like basic commandline
+            _('open process <text>'): Key('w-m') + Function(execute_keystr),
+        }
+        self.extras = [Dictation('text')]
+        MappingRule.__init__(self, *args, **kwargs)
 
 def n_to_key(n):
     """Convert number to workspace keysym."""
@@ -44,22 +46,24 @@ class WorkspaceRules(MappingRule):
 
     """Rules for movement in workspaces."""
 
-    mapping = {
-        _('workspace <n>'): Function(go_to_workspace),
-        _('move [to] workspace <n>'): Function(move_to_workspace),
-        _('window <direction>'): Key('w-%(direction)s'),
-        _('move window [to the] <direction>'): Key('sw-%(direction)s'),
-        }
-    extras = [
-        IntegerRef('n', 1, 13),
-        Choice(
-            'direction',
-            {
-                _('left'): 'left',
-                _('right'): 'right',
-                _('up'): 'up',
-                _('down'): 'down'}),
-        ]
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('workspace <n>'): Function(go_to_workspace),
+            _('move [to] workspace <n>'): Function(move_to_workspace),
+            _('window <direction>'): Key('w-%(direction)s'),
+            _('move window [to the] <direction>'): Key('sw-%(direction)s'),
+            }
+        self.extras = [
+            IntegerRef('n', 1, 13),
+            Choice(
+                'direction',
+                {
+                    _('left'): 'left',
+                    _('right'): 'right',
+                    _('up'): 'up',
+                    _('down'): 'down'}),
+            ]
+        MappingRule.__init__(self, *args, **kwargs)
 
 GRAMMAR = None
 
