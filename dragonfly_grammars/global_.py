@@ -1,13 +1,166 @@
 """Grammar for commands useful in a global context."""
+import string
 from aenea import (
     Grammar,
     MappingRule,
     Key,
+    CompoundRule,
+    RuleRef,
+    Alternative,
+    Repetition,
     Function,
     IntegerRef,
     Dictation)
-from dragonfly_grammars.common import _, execute_keystr
+from dragonfly_grammars.common import _, execute_keystr, extract_values
 
+class Symbol(MappingRule):
+
+    """Symbols, brackets, whitespace and interpunction."""
+
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('[(left|open)] angle [bracket]'): 'langle',
+            _('[(left|open)] [curly] brace'): 'lbrace',
+            _('[(left|open)] [square] bracket'): 'lbracket',
+            _('[(left|open)] paren'): 'lparen',
+            _('[(right|close)] angle [bracket]'): 'rangle',
+            _('[(right|close)] [curly] brace'): 'rbrace',
+            _('[(right|close)] [square] bracket'): 'rbracket',
+            _('[(right|close)] paren'): 'rparen',
+            _('(ampersand|and)'): 'ampersand',
+            _('apostrophe'): 'apostrophe',
+            _('asterisk'): 'asterisk',
+            _('at'): 'at',
+            _('backslash'): 'backslash',
+            _('backtick'): 'backtick',
+            _('[vertical] bar'): 'bar',
+            _('caret'): 'caret',
+            _('colon'): 'colon',
+            _('comma'): 'comma',
+            _('dollar [sign]'): 'dollar',
+            _('(dot|period|full stop)'): 'dot',
+            _('double quote'): 'dquote',
+            _('equal[s]'): 'equal',
+            _('exclamation [point]'): 'exclamation',
+            _('hash'): 'hash',
+            _('hyphen'): 'hyphen',
+            _('percent [sign]'): 'percent',
+            _('plus [sign]'): 'plus',
+            _('question[mark]'): 'question',
+            _('semicolon'): 'semicolon',
+            _('slash'): 'slash',
+            _('tilde'): 'tilde',
+            _('underscore'): 'underscore',
+            _('space'): 'space',
+            _('(enter|newline)'): 'enter',
+            _('tab [key]'): 'tab',
+        }
+        MappingRule.__init__(self, *args, **kwargs)
+
+class Number(MappingRule):
+
+    """Numeral."""
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('zero'): '0',
+            _('one'): '1',
+            _('two'): '2',
+            _('three'): '3',
+            _('four'): '4',
+            _('five'): '5',
+            _('six'): '6',
+            _('seven'): '7',
+            _('eight'): '8',
+            _('nine'): '9',
+        }
+        MappingRule.__init__(self, *args, **kwargs)
+
+class LowercaseCharacter(MappingRule):
+
+    """Lowercase alphabetic character."""
+
+    def __init__(self, *args, **kwargs):
+        self.mapping = {
+            _('alpha'): 'a',
+            _('bravo'): 'b',
+            _('charlie'): 'c',
+            _('delta'): 'd',
+            _('echo'): 'e',
+            _('foxtrot'): 'f',
+            _('golf'): 'g',
+            _('hotel'): 'h',
+            _('india'): 'i',
+            _('juliet'): 'j',
+            _('kilo'): 'k',
+            _('lima'): 'l',
+            _('mike'): 'm',
+            _('november'): 'n',
+            _('oscar'): 'o',
+            _('papa'): 'p',
+            _('quebec'): 'q',
+            _('romeo'): 'r',
+            _('sierra'): 's',
+            _('tango'): 't',
+            _('uniform'): 'u',
+            _('victor'): 'v',
+            _('whiskey'): 'w',
+            _('x-ray'): 'x',
+            _('yankee'): 'y',
+            _('zulu'): 'z'}
+        for char in string.uppercase:
+            self.mapping[char] = char.lower()
+        MappingRule.__init__(self, *args, **kwargs)
+
+class UppercaseCharacter(CompoundRule):
+
+    """Uppercase character."""
+
+    def __init__(self, *args, **kwargs):
+        self.spec = _('cap <lowercase_letter>')
+        self.extras = [RuleRef(
+            name='lowercase_letter',
+            rule=LowercaseCharacter)]
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        return 's-{}'.format(extract_values(node, [LowercaseCharacter])[0])
+
+class AnyCharacter(CompoundRule):
+
+    """Any char."""
+
+    def __init__(self, *args, **kwargs):
+        self.spec = '<character>'
+        self.extras = [Alternative(name='character', children=(
+            RuleRef(rule=UppercaseCharacter),
+            RuleRef(rule=LowercaseCharacter),
+            RuleRef(rule=Number),
+            RuleRef(rule=Symbol)))]
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        # try if uppercase first, because uppercase
+        # contains lowercase
+        uppercase = extract_values(
+            node, UppercaseCharacter, recurse=True)
+        if len(uppercase) > 0:
+            return uppercase[0]
+        return extract_values(
+            node, [LowercaseCharacter, Symbol, Number], recurse=True)[0]
+
+class SpellingRule(CompoundRule):
+
+    """Our very own spelling rule."""
+
+    def __init__(self, *args, **kwargs):
+        self.spec = _('spell <characters>')
+        self.extras = [Repetition(
+            name='characters', child=AnyCharacter, min=1, max=80)]
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        return ','.join(extract_values(
+            node, AnyCharacter, recurse=True))
 
 class BasicKeyboardRule(MappingRule):
 
@@ -44,6 +197,7 @@ def load():
     global GRAMMAR
     GRAMMAR = Grammar('global')
     GRAMMAR.add_rule(BasicKeyboardRule())
+    GRAMMAR.add_rule(SpellingRule())
     GRAMMAR.load()
 
     print 'global grammar: Loaded.'
