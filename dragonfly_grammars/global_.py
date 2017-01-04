@@ -119,7 +119,7 @@ class UppercaseCharacter(CompoundRule):
         self.spec = _('cap <lowercase_letter>')
         self.extras = [RuleRef(
             name='lowercase_letter',
-            rule=LowercaseCharacter)]
+            rule=LowercaseCharacter())]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
@@ -133,10 +133,10 @@ class AnyCharacter(CompoundRule):
     def __init__(self, *args, **kwargs):
         self.spec = '<character>'
         self.extras = [Alternative(name='character', children=(
-            RuleRef(rule=UppercaseCharacter),
-            RuleRef(rule=LowercaseCharacter),
-            RuleRef(rule=Number),
-            RuleRef(rule=Symbol)))]
+            RuleRef(rule=UppercaseCharacter()),
+            RuleRef(rule=LowercaseCharacter()),
+            RuleRef(rule=Number()),
+            RuleRef(rule=Symbol())))]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
@@ -157,7 +157,7 @@ class SpellingRule(CompoundRule):
         self.spec = _('spell <characters>')
         self.extras = [Repetition(
             name='characters',
-            child=RuleRef(rule=AnyCharacter),
+            child=RuleRef(rule=AnyCharacter()),
             min=1,
             max=80)]
         CompoundRule.__init__(self, *args, **kwargs)
@@ -188,10 +188,10 @@ class PressRule(CompoundRule):
         self.extras = [
             Repetition(
                 name='modifiers',
-                child=RuleRef(rule=Modifier),
+                child=RuleRef(rule=Modifier()),
                 min=0,
                 max=4),
-            RuleRef(name='character', rule=AnyCharacter)]
+            RuleRef(name='character', rule=AnyCharacter())]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
