@@ -166,6 +166,9 @@ class SpellingRule(CompoundRule):
         return ','.join(extract_values(
             node, AnyCharacter, recurse=True))
 
+    def _process_recognition(self, node, extras):
+        Key(self.value(node)).execute()
+
 class Modifier(MappingRule):
 
     """Modifier keys."""
@@ -200,6 +203,9 @@ class PressRule(CompoundRule):
         if len(mods) == 0:
             return char
         return "{}-{}".format("".join(mods), char)
+
+    def _process_recognition(self, node, extras):
+        Key(self.value(node)).execute()
 
 class BasicKeyboardRule(MappingRule):
 
