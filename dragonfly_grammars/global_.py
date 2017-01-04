@@ -17,6 +17,8 @@ class Symbol(MappingRule):
 
     """Symbols, brackets, whitespace and interpunction."""
 
+    exported = False
+
     def __init__(self, *args, **kwargs):
         self.mapping = {
             _('(left|open) angle [bracket]'): 'langle',
@@ -60,6 +62,9 @@ class Symbol(MappingRule):
 class Number(MappingRule):
 
     """Numeral."""
+
+    exported = False
+
     def __init__(self, *args, **kwargs):
         self.mapping = {
             _('zero'): '0',
@@ -78,6 +83,8 @@ class Number(MappingRule):
 class LowercaseCharacter(MappingRule):
 
     """Lowercase alphabetic character."""
+
+    exported = False
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
@@ -115,6 +122,8 @@ class UppercaseCharacter(CompoundRule):
 
     """Uppercase character."""
 
+    exported = False
+
     def __init__(self, *args, **kwargs):
         self.spec = _('cap <lowercase_letter>')
         self.extras = [RuleRef(
@@ -129,6 +138,8 @@ class UppercaseCharacter(CompoundRule):
 class AnyCharacter(CompoundRule):
 
     """Any char."""
+
+    exported = False
 
     def __init__(self, *args, **kwargs):
         self.spec = '<character>'
@@ -172,6 +183,8 @@ class SpellingRule(CompoundRule):
 class Modifier(MappingRule):
 
     """Modifier keys."""
+
+    exported = False
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
