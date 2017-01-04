@@ -19,14 +19,14 @@ class Symbol(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('[(left|open)] angle [bracket]'): 'langle',
-            _('[(left|open)] [curly] brace'): 'lbrace',
-            _('[(left|open)] [square] bracket'): 'lbracket',
-            _('[(left|open)] paren'): 'lparen',
-            _('[(right|close)] angle [bracket]'): 'rangle',
-            _('[(right|close)] [curly] brace'): 'rbrace',
-            _('[(right|close)] [square] bracket'): 'rbracket',
-            _('[(right|close)] paren'): 'rparen',
+            _('(left|open) angle [bracket]'): 'langle',
+            _('(left|open) [curly] brace'): 'lbrace',
+            _('(left|open) [square] bracket'): 'lbracket',
+            _('(left|open) paren'): 'lparen',
+            _('(right|close) angle [bracket]'): 'rangle',
+            _('(right|close) [curly] brace'): 'rbrace',
+            _('(right|close) [square] bracket'): 'rbracket',
+            _('(right|close) paren'): 'rparen',
             _('(ampersand|and)'): 'ampersand',
             _('apostrophe'): 'apostrophe',
             _('asterisk'): 'asterisk',

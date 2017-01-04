@@ -27,7 +27,7 @@ Add your language in __init__.py and have it activated in load_grammars. Then ma
 ### Translations
 Note: watch out with init_catalog, it will overwrite existing .po files
 ```
-python ./setup.py extract-messages
+python ./setup.py extract_messages
 python ./setup.py (init|update)_catalog --locale=<locale>
 # edit relevant .po file in dragonfly_grammars/translations/language
 python ./setup.py compile_catalog
