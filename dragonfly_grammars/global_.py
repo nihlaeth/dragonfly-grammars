@@ -119,7 +119,7 @@ class UppercaseCharacter(CompoundRule):
         self.spec = _('cap <lowercase_letter>')
         self.extras = [RuleRef(
             name='lowercase_letter',
-            rule=LowercaseCharacter())]
+            rule=LowercaseCharacter(imported=True))]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
