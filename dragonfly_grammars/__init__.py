@@ -4,9 +4,11 @@ import os.path
 from pkg_resources import resource_filename, Requirement
 import natlinkstatus
 from dragonfly_grammars.common import set_translator
-import dragonfly_grammars.aenea_
-import dragonfly_grammars.i3
-import dragonfly_grammars.global_
+from dragonfly_grammars import (
+    aenea_,
+    i3,
+    global_,
+    cli)
 
 _LOCALEDIR = os.path.join(resource_filename(
     Requirement.parse('dragonfly_grammars'),
@@ -27,22 +29,14 @@ def load_grammars():
     else:
         # fallback
         set_translator(ENX.lgettext)
-    dragonfly_grammars.aenea_ = reload(
-        dragonfly_grammars.aenea_)
-    dragonfly_grammars.aenea_.load()
-    dragonfly_grammars.i3 = reload(dragonfly_grammars.i3)
-    dragonfly_grammars.i3.load()
-    dragonfly_grammars.global_ = reload(
-        dragonfly_grammars.global_)
-    dragonfly_grammars.global_.load()
+    aenea_.load()
+    i3.load()
+    global_.load()
+    cli.load()
 
 def unload_grammars():
     """Unregister grammars and reload grammar modules."""
-    dragonfly_grammars.aenea_.unload()
-    dragonfly_grammars.aenea_ = reload(
-        dragonfly_grammars.aenea_)
-    dragonfly_grammars.i3.unload()
-    dragonfly_grammars.i3 = reload(dragonfly_grammars.i3)
-    dragonfly_grammars.global_.unload()
-    dragonfly_grammars.global_ = reload(
-        dragonfly_grammars.global_)
+    aenea_.unload()
+    i3.unload()
+    global_.unload()
+    cli.unload()

@@ -39,7 +39,9 @@ class DisableRule(dragonfly.CompoundRule):
 
     """Disable remote."""
 
-    spec = _('disable proxy server')
+    def __init__(self, *args, **kwargs):
+        self.spec = _('disable proxy server')
+        dragonfly.CompoundRule.__init__(self, *args, **kwargs)
 
     def _process_recognition(self, _node, _extras):
         aenea.config.disable_proxy()
@@ -49,7 +51,9 @@ class EnableRule(dragonfly.CompoundRule):
 
     """Enable remote."""
 
-    spec = _('enable proxy server')
+    def __init__(self, *args, **kwargs):
+        self.spec = _('enable proxy server')
+        dragonfly.CompoundRule.__init__(self, *args, **kwargs)
 
     def _process_recognition(self, _node, _extras):
         aenea.config.enable_proxy()
@@ -62,8 +66,10 @@ class ChangeServer(dragonfly.CompoundRule):
 
     """Change to different remote."""
 
-    spec = _('set proxy server to <proxy>')
-    extras = [dragonfly.DictListRef('proxy', SERVER_LIST)]
+    def __init__(self, *args, **kwargs):
+        self.spec = _('set proxy server to <proxy>')
+        self.extras = [dragonfly.DictListRef('proxy', SERVER_LIST)]
+        dragonfly.CompoundRule.__init__(self, *args, **kwargs)
 
     def _process_recognition(self, _node, extras):
         aenea.communications.set_server_address((
@@ -103,7 +109,6 @@ def load():
         print 'Aenea: Successfully connected to server.'
     except Exception:
         print 'Aenea: Unable to connect to server.'
-
 
 def unload():
     """Unregister grammar."""

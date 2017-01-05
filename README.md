@@ -4,9 +4,9 @@ My personal dragonfly grammars
 I need my grammars to detect which language the current profile uses, and translate the grammars accordingly. So I decided to make that happen.
 
 ## Notes
-I dislike the way natlink, dragonfly and aenea operate. Don't get ma wrong, they are amazing tools. But they don't make for good or elegant code. I attempted to right some of the things that bother me most in this module (mostly regarding statefullness, mucking about in system, poorly documented config files and code-reuse), but it is still a highly statefull machine.
+I dislike the way natlink, dragonfly and aenea operate. Don't get me wrong, they are amazing tools. But they don't make for good or elegant code. I attempted to right some of the things that bother me most in this module (mostly regarding statefullness, mucking about in system, poorly documented config files and code-reuse), but it is still a highly statefull machine.
 
-I attempted to use built-in Python tools as much as possible. I use gettext for translations, setuptools for installation and the built-in reload for refreshing modules after a language change, or when natlink finds it necessary to reload the code. It is compatible with existing tools, but it works slightly different.
+I attempted to use built-in Python tools as much as possible. I use gettext for translations, setuptools for installation and fresh instances and grammar registration instead of module reloading. It is compatible with existing tools, but it works slightly different.
 
 Still, it is not nearly as pythonic as I would like and I might one day get my grammars to the point where contributing to the existing tools and improving them will be easy. Right now though, all my energy is going into the grammars themselves.
 

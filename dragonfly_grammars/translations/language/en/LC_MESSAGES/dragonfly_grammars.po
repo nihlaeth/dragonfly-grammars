@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-04 19:08+0100\n"
+"POT-Creation-Date: 2017-01-05 16:06+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,415 +19,431 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: dragonfly_grammars/aenea_.py:42
+#: dragonfly_grammars/aenea_.py:43
 msgid "disable proxy server"
 msgstr "disable proxy server"
 
-#: dragonfly_grammars/aenea_.py:52
+#: dragonfly_grammars/aenea_.py:55
 msgid "enable proxy server"
 msgstr "enable proxy server"
 
-#: dragonfly_grammars/aenea_.py:65
+#: dragonfly_grammars/aenea_.py:70
 msgid "set proxy server to <proxy>"
 msgstr "set proxy server to <proxy>"
 
-#: dragonfly_grammars/cli.py:17
+#: dragonfly_grammars/cli.py:21
 msgid "[with] X forwarding"
 msgstr "[with] X forwarding"
 
-#: dragonfly_grammars/cli.py:23
+#: dragonfly_grammars/cli.py:31
 msgid "[<user> at] <server>"
 msgstr "[<user> at] <server>"
 
-#: dragonfly_grammars/cli.py:27
+#: dragonfly_grammars/cli.py:35
 msgid "me"
 msgstr "me"
 
-#: dragonfly_grammars/cli.py:31
+#: dragonfly_grammars/cli.py:39
 msgid "yemanja"
 msgstr "yemanja"
 
-#: dragonfly_grammars/cli.py:32
+#: dragonfly_grammars/cli.py:40
 msgid "iris"
 msgstr "iris"
 
-#: dragonfly_grammars/cli.py:33
+#: dragonfly_grammars/cli.py:41
 msgid "aine"
 msgstr "aine"
 
-#: dragonfly_grammars/cli.py:40
+#: dragonfly_grammars/cli.py:50
 msgid "S S H [<ssh_options>] <server> [<command>]"
 msgstr "S S H [<ssh_options>] <server> [<command>]"
 
-#: dragonfly_grammars/global_.py:22
+#: dragonfly_grammars/cli.py:78
+msgid "firefox"
+msgstr "firefox"
+
+#: dragonfly_grammars/cli.py:79
+msgid "print working directory"
+msgstr "print working directory"
+
+#: dragonfly_grammars/cli.py:80
+msgid "password gorilla"
+msgstr "password gorilla"
+
+#: dragonfly_grammars/cli.py:90
+msgid "command <command>"
+msgstr "<command>"
+
+#: dragonfly_grammars/global_.py:24
 msgid "(left|open) angle [bracket]"
 msgstr "(left|open) angle [bracket]"
 
-#: dragonfly_grammars/global_.py:23
+#: dragonfly_grammars/global_.py:25
 msgid "(left|open) [curly] brace"
 msgstr "(left|open) [curly] brace"
 
-#: dragonfly_grammars/global_.py:24
+#: dragonfly_grammars/global_.py:26
 msgid "(left|open) [square] bracket"
 msgstr "(left|open) [square] bracket"
 
-#: dragonfly_grammars/global_.py:25
+#: dragonfly_grammars/global_.py:27
 msgid "(left|open) paren"
 msgstr "(left|open) paren"
 
-#: dragonfly_grammars/global_.py:26
+#: dragonfly_grammars/global_.py:28
 msgid "(right|close) angle [bracket]"
 msgstr "(right|close) angle [bracket]"
 
-#: dragonfly_grammars/global_.py:27
+#: dragonfly_grammars/global_.py:29
 msgid "(right|close) [curly] brace"
 msgstr "(right|close) [curly] brace"
 
-#: dragonfly_grammars/global_.py:28
+#: dragonfly_grammars/global_.py:30
 msgid "(right|close) [square] bracket"
 msgstr "(right|close) [square] bracket"
 
-#: dragonfly_grammars/global_.py:29
+#: dragonfly_grammars/global_.py:31
 msgid "(right|close) paren"
 msgstr "(right|close) paren"
 
-#: dragonfly_grammars/global_.py:30
+#: dragonfly_grammars/global_.py:32
 msgid "(ampersand|and)"
 msgstr "(ampersand|and)"
 
-#: dragonfly_grammars/global_.py:31
+#: dragonfly_grammars/global_.py:33
 msgid "apostrophe"
 msgstr "apostrophe"
 
-#: dragonfly_grammars/global_.py:32
+#: dragonfly_grammars/global_.py:34
 msgid "asterisk"
 msgstr "asterisk"
 
-#: dragonfly_grammars/global_.py:33
+#: dragonfly_grammars/global_.py:35
 msgid "at"
 msgstr "at"
 
-#: dragonfly_grammars/global_.py:34
+#: dragonfly_grammars/global_.py:36
 msgid "backslash"
 msgstr "backslash"
 
-#: dragonfly_grammars/global_.py:35
+#: dragonfly_grammars/global_.py:37
 msgid "backtick"
 msgstr "backtick"
 
-#: dragonfly_grammars/global_.py:36
+#: dragonfly_grammars/global_.py:38
 msgid "[vertical] bar"
 msgstr "[vertical] bar"
 
-#: dragonfly_grammars/global_.py:37
+#: dragonfly_grammars/global_.py:39
 msgid "caret"
 msgstr "caret"
 
-#: dragonfly_grammars/global_.py:38
+#: dragonfly_grammars/global_.py:40
 msgid "colon"
 msgstr "colon"
 
-#: dragonfly_grammars/global_.py:39
+#: dragonfly_grammars/global_.py:41
 msgid "comma"
 msgstr "comma"
 
-#: dragonfly_grammars/global_.py:40
+#: dragonfly_grammars/global_.py:42
 msgid "dollar [sign]"
 msgstr "dollar [sign]"
 
-#: dragonfly_grammars/global_.py:41
+#: dragonfly_grammars/global_.py:43
 msgid "(dot|period|full stop)"
 msgstr "(dot|period|full stop)"
 
-#: dragonfly_grammars/global_.py:42
+#: dragonfly_grammars/global_.py:44
 msgid "double quote"
 msgstr "double quote"
 
-#: dragonfly_grammars/global_.py:43
+#: dragonfly_grammars/global_.py:45
 msgid "equal[s]"
 msgstr "equal[s]"
 
-#: dragonfly_grammars/global_.py:44
+#: dragonfly_grammars/global_.py:46
 msgid "exclamation [point]"
 msgstr "exclamation [point]"
 
-#: dragonfly_grammars/global_.py:45
+#: dragonfly_grammars/global_.py:47
 msgid "hash"
 msgstr "hash"
 
-#: dragonfly_grammars/global_.py:46
+#: dragonfly_grammars/global_.py:48
 msgid "hyphen"
 msgstr "hyphen"
 
-#: dragonfly_grammars/global_.py:47
+#: dragonfly_grammars/global_.py:49
 msgid "percent [sign]"
 msgstr "percent [sign]"
 
-#: dragonfly_grammars/global_.py:48
+#: dragonfly_grammars/global_.py:50
 msgid "plus [sign]"
 msgstr "plus [sign]"
 
-#: dragonfly_grammars/global_.py:49
+#: dragonfly_grammars/global_.py:51
 msgid "question[mark]"
 msgstr "question[mark]"
 
-#: dragonfly_grammars/global_.py:50
+#: dragonfly_grammars/global_.py:52
 msgid "semicolon"
 msgstr "semicolon"
 
-#: dragonfly_grammars/global_.py:51
+#: dragonfly_grammars/global_.py:53
 msgid "slash"
 msgstr "slash"
 
-#: dragonfly_grammars/global_.py:52
+#: dragonfly_grammars/global_.py:54
 msgid "tilde"
 msgstr "tilde"
 
-#: dragonfly_grammars/global_.py:53
+#: dragonfly_grammars/global_.py:55
 msgid "underscore"
 msgstr "underscore"
 
-#: dragonfly_grammars/global_.py:54
+#: dragonfly_grammars/global_.py:56
 msgid "space"
 msgstr "space"
 
-#: dragonfly_grammars/global_.py:55
+#: dragonfly_grammars/global_.py:57
 msgid "(enter|newline)"
 msgstr "(enter|newline)"
 
-#: dragonfly_grammars/global_.py:56
+#: dragonfly_grammars/global_.py:58
 msgid "tab [key]"
 msgstr "tab [key]"
 
-#: dragonfly_grammars/global_.py:65
+#: dragonfly_grammars/global_.py:70
 msgid "zero"
 msgstr "zero"
 
-#: dragonfly_grammars/global_.py:66
+#: dragonfly_grammars/global_.py:71
 msgid "one"
 msgstr "one"
 
-#: dragonfly_grammars/global_.py:67
+#: dragonfly_grammars/global_.py:72
 msgid "two"
 msgstr "two"
 
-#: dragonfly_grammars/global_.py:68
+#: dragonfly_grammars/global_.py:73
 msgid "three"
 msgstr "three"
 
-#: dragonfly_grammars/global_.py:69
+#: dragonfly_grammars/global_.py:74
 msgid "four"
 msgstr "four"
 
-#: dragonfly_grammars/global_.py:70
+#: dragonfly_grammars/global_.py:75
 msgid "five"
 msgstr "five"
 
-#: dragonfly_grammars/global_.py:71
+#: dragonfly_grammars/global_.py:76
 msgid "six"
 msgstr "six"
 
-#: dragonfly_grammars/global_.py:72
+#: dragonfly_grammars/global_.py:77
 msgid "seven"
 msgstr "seven"
 
-#: dragonfly_grammars/global_.py:73
+#: dragonfly_grammars/global_.py:78
 msgid "eight"
 msgstr "eight"
 
-#: dragonfly_grammars/global_.py:74
+#: dragonfly_grammars/global_.py:79
 msgid "nine"
 msgstr "nine"
 
-#: dragonfly_grammars/global_.py:84
+#: dragonfly_grammars/global_.py:91
 msgid "alpha"
 msgstr "alpha"
 
-#: dragonfly_grammars/global_.py:85
+#: dragonfly_grammars/global_.py:92
 msgid "bravo"
 msgstr "bravo"
 
-#: dragonfly_grammars/global_.py:86
+#: dragonfly_grammars/global_.py:93
 msgid "charlie"
 msgstr "charlie"
 
-#: dragonfly_grammars/global_.py:87
+#: dragonfly_grammars/global_.py:94
 msgid "delta"
 msgstr "delta"
 
-#: dragonfly_grammars/global_.py:88
+#: dragonfly_grammars/global_.py:95
 msgid "echo"
 msgstr "echo"
 
-#: dragonfly_grammars/global_.py:89
+#: dragonfly_grammars/global_.py:96
 msgid "foxtrot"
 msgstr "foxtrot"
 
-#: dragonfly_grammars/global_.py:90
+#: dragonfly_grammars/global_.py:97
 msgid "golf"
 msgstr "golf"
 
-#: dragonfly_grammars/global_.py:91
+#: dragonfly_grammars/global_.py:98
 msgid "hotel"
 msgstr "hotel"
 
-#: dragonfly_grammars/global_.py:92
+#: dragonfly_grammars/global_.py:99
 msgid "india"
 msgstr "india"
 
-#: dragonfly_grammars/global_.py:93
+#: dragonfly_grammars/global_.py:100
 msgid "juliet"
 msgstr "juliet"
 
-#: dragonfly_grammars/global_.py:94
+#: dragonfly_grammars/global_.py:101
 msgid "kilo"
 msgstr "kilo"
 
-#: dragonfly_grammars/global_.py:95
+#: dragonfly_grammars/global_.py:102
 msgid "lima"
 msgstr "lima"
 
-#: dragonfly_grammars/global_.py:96
+#: dragonfly_grammars/global_.py:103
 msgid "mike"
 msgstr "mike"
 
-#: dragonfly_grammars/global_.py:97
+#: dragonfly_grammars/global_.py:104
 msgid "november"
 msgstr "november"
 
-#: dragonfly_grammars/global_.py:98
+#: dragonfly_grammars/global_.py:105
 msgid "oscar"
 msgstr "oscar"
 
-#: dragonfly_grammars/global_.py:99
+#: dragonfly_grammars/global_.py:106
 msgid "papa"
 msgstr "papa"
 
-#: dragonfly_grammars/global_.py:100
+#: dragonfly_grammars/global_.py:107
 msgid "quebec"
 msgstr "quebec"
 
-#: dragonfly_grammars/global_.py:101
+#: dragonfly_grammars/global_.py:108
 msgid "romeo"
 msgstr "romeo"
 
-#: dragonfly_grammars/global_.py:102
+#: dragonfly_grammars/global_.py:109
 msgid "sierra"
 msgstr "sierra"
 
-#: dragonfly_grammars/global_.py:103
+#: dragonfly_grammars/global_.py:110
 msgid "tango"
 msgstr "tango"
 
-#: dragonfly_grammars/global_.py:104
+#: dragonfly_grammars/global_.py:111
 msgid "uniform"
 msgstr "uniform"
 
-#: dragonfly_grammars/global_.py:105
+#: dragonfly_grammars/global_.py:112
 msgid "victor"
 msgstr "victor"
 
-#: dragonfly_grammars/global_.py:106
+#: dragonfly_grammars/global_.py:113
 msgid "whiskey"
 msgstr "whiskey"
 
-#: dragonfly_grammars/global_.py:107
+#: dragonfly_grammars/global_.py:114
 msgid "x-ray"
 msgstr "x-ray"
 
-#: dragonfly_grammars/global_.py:108
+#: dragonfly_grammars/global_.py:115
 msgid "yankee"
 msgstr "yankee"
 
-#: dragonfly_grammars/global_.py:109
+#: dragonfly_grammars/global_.py:116
 msgid "zulu"
 msgstr "zulu"
 
-#: dragonfly_grammars/global_.py:119
+#: dragonfly_grammars/global_.py:128
 msgid "cap <lowercase_letter>"
 msgstr "cap <lowercase_letter>"
 
-#: dragonfly_grammars/global_.py:157
+#: dragonfly_grammars/global_.py:168
 msgid "spell <characters>"
 msgstr "spell <characters>"
 
-#: dragonfly_grammars/global_.py:175
+#: dragonfly_grammars/global_.py:191
 msgid "control"
 msgstr "control"
 
-#: dragonfly_grammars/global_.py:176
+#: dragonfly_grammars/global_.py:192
 msgid "shift"
 msgstr "shift"
 
-#: dragonfly_grammars/global_.py:177
+#: dragonfly_grammars/global_.py:193
 msgid "alt"
 msgstr "alt"
 
-#: dragonfly_grammars/global_.py:178
+#: dragonfly_grammars/global_.py:194
 msgid "(command|super)"
 msgstr "(command|super)"
 
-#: dragonfly_grammars/global_.py:187
+#: dragonfly_grammars/global_.py:203
 msgid "press [<modifiers>] <character>"
 msgstr "press [<modifiers>] <character>"
 
-#: dragonfly_grammars/global_.py:209
+#: dragonfly_grammars/global_.py:228
 msgid "escape"
 msgstr "escape"
 
-#: dragonfly_grammars/global_.py:210
+#: dragonfly_grammars/global_.py:229
 msgid "[<n>] backspace[s]"
 msgstr "[<n>] backspace[s]"
 
-#: dragonfly_grammars/global_.py:211
+#: dragonfly_grammars/global_.py:230
 msgid "[<n>] enter[s]"
 msgstr "[<n>] enter[s]"
 
-#: dragonfly_grammars/global_.py:212
+#: dragonfly_grammars/global_.py:231
 msgid "[<n>] tab[s]"
 msgstr "[<n>] tab[s]"
 
-#: dragonfly_grammars/global_.py:213
+#: dragonfly_grammars/global_.py:232
 msgid "[<n>] space[s]"
 msgstr "[<n>] space[s]"
 
-#: dragonfly_grammars/global_.py:214
+#: dragonfly_grammars/global_.py:233
 msgid "[<n>] delete[s]"
 msgstr "[<n>] delete[s]"
 
-#: dragonfly_grammars/global_.py:216
+#: dragonfly_grammars/global_.py:235
 msgid "go [<n>] up"
 msgstr "go [<n>] up"
 
-#: dragonfly_grammars/global_.py:217
+#: dragonfly_grammars/global_.py:236
 msgid "go [<n>] down"
 msgstr "go [<n>] down"
 
-#: dragonfly_grammars/global_.py:218
+#: dragonfly_grammars/global_.py:237
 msgid "go [<n>] left"
 msgstr "go [<n>] left"
 
-#: dragonfly_grammars/global_.py:219
+#: dragonfly_grammars/global_.py:238
 msgid "go [<n>] right"
 msgstr "go [<n>] right"
 
-#: dragonfly_grammars/global_.py:220
+#: dragonfly_grammars/global_.py:239
 msgid "(go home|go to start)"
 msgstr "(go home|go to start)"
 
-#: dragonfly_grammars/global_.py:221
+#: dragonfly_grammars/global_.py:240
 msgid "go [to] end"
 msgstr "go [to] end"
 
-#: dragonfly_grammars/global_.py:222
+#: dragonfly_grammars/global_.py:241
 msgid "go [<n>] page[s] up"
 msgstr "go [<n>] page[s] up"
 
-#: dragonfly_grammars/global_.py:223
+#: dragonfly_grammars/global_.py:242
 msgid "go [<n>] page[s] down"
 msgstr "go [<n>] page[s] down"
 
-#: dragonfly_grammars/global_.py:225
+#: dragonfly_grammars/global_.py:244
 msgid "dictate <text>"
 msgstr "dictate <text>"
 
