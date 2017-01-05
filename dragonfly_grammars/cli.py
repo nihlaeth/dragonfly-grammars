@@ -89,7 +89,7 @@ class Command(CompoundRule):
     def __init__(self, *args, **kwargs):
         self.spec = _("command <command>")
         self.extras = [Alternative(name='command', children=(
-            RuleRef(rule=SimpleCommand())))]
+            RuleRef(rule=SimpleCommand()),))]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
