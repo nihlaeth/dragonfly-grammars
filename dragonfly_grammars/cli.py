@@ -42,6 +42,14 @@ class SshServer(CompoundRule):
                 })]
         CompoundRule.__init__(self, *args, **kwargs)
 
+    def value(self, node):
+        user = node.get_child_by_name('user', shallow=True)
+        server = node.get_child_by_name('server', shallow=True)
+        if user:
+            return "{}@{}".format(user.value(), server.value())
+        return server.value()
+
+
 class SshRule(CompoundRule):
 
     """Most common ssh use."""

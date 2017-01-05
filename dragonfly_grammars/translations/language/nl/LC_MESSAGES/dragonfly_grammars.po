@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-05 16:06+0100\n"
+"POT-Creation-Date: 2017-01-05 19:11+0100\n"
 "PO-Revision-Date: 2016-12-19 11:30+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
@@ -55,23 +55,23 @@ msgstr "iris"
 msgid "aine"
 msgstr "aine"
 
-#: dragonfly_grammars/cli.py:50
+#: dragonfly_grammars/cli.py:58
 msgid "S S H [<ssh_options>] <server> [<command>]"
-msgstr "S S H [<ssh_options>] <server> [<command>]"
+msgstr "ssh [<ssh_options>] <server> [<command>]"
 
-#: dragonfly_grammars/cli.py:78
+#: dragonfly_grammars/cli.py:86
 msgid "firefox"
 msgstr "firefox"
 
-#: dragonfly_grammars/cli.py:79
+#: dragonfly_grammars/cli.py:87
 msgid "print working directory"
 msgstr "print werkmap"
 
-#: dragonfly_grammars/cli.py:80
+#: dragonfly_grammars/cli.py:88
 msgid "password gorilla"
 msgstr "password gorilla"
 
-#: dragonfly_grammars/cli.py:90
+#: dragonfly_grammars/cli.py:101
 msgid "command <command>"
 msgstr "<command>"
 
