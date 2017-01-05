@@ -80,6 +80,9 @@ class SimpleCommand(MappingRule):
             _('password gorilla'): 'passwordgorilla'}
         MappingRule.__init__(self, *args, **kwargs)
 
+    def _process_recognition(self, node, extras):
+        execute_keystr(self.value(node))
+
 class Command(CompoundRule):
 
     """Any command except ssh for recursion reasons."""
