@@ -36,9 +36,24 @@ class SshServer(CompoundRule):
             Choice(
                 'server',
                 {
+                    _("cerridwen"): "cerridwen",
                     _("yemanja"): "yemanja",
                     _("iris"): "iris",
                     _("aine"): "aine",
+                    _("dayea"): "dayea",
+                    _("brighid"): "brighid",
+                    _("freya"): "freya",
+                    _("arthemis"): "arthemis",
+                    _("morrighan"): "morrighan",
+                    _("epona"): "epona",
+                    _("athena"): "athena",
+                    _("echo"): "echo",
+                    _("hera"): "hera",
+                    _("hera boot"): "heraboot",
+                    _("pele"): "pele",
+                    _("eileen"): "eileen",
+                    _("inanna"): "inanna.humanity4all.nl",
+                    _("anubis"): "anubis.humanity4all.nl",
                 })]
         CompoundRule.__init__(self, *args, **kwargs)
 

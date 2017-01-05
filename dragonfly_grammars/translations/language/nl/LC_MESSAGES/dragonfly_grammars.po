@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-05 19:11+0100\n"
+"POT-Creation-Date: 2017-01-05 19:31+0100\n"
 "PO-Revision-Date: 2016-12-19 11:30+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
@@ -44,34 +44,94 @@ msgid "me"
 msgstr "ik"
 
 #: dragonfly_grammars/cli.py:39
+msgid "cerridwen"
+msgstr "cerridwen"
+
+#: dragonfly_grammars/cli.py:40
 msgid "yemanja"
 msgstr "yemanja"
 
-#: dragonfly_grammars/cli.py:40
+#: dragonfly_grammars/cli.py:41
 msgid "iris"
 msgstr "iris"
 
-#: dragonfly_grammars/cli.py:41
+#: dragonfly_grammars/cli.py:42
 msgid "aine"
 msgstr "aine"
 
-#: dragonfly_grammars/cli.py:58
+#: dragonfly_grammars/cli.py:43
+msgid "dayea"
+msgstr "dayea"
+
+#: dragonfly_grammars/cli.py:44
+msgid "brighid"
+msgstr "brighid"
+
+#: dragonfly_grammars/cli.py:45
+msgid "freya"
+msgstr "freya"
+
+#: dragonfly_grammars/cli.py:46
+msgid "arthemis"
+msgstr "arthemis"
+
+#: dragonfly_grammars/cli.py:47
+msgid "morrighan"
+msgstr "morrighan"
+
+#: dragonfly_grammars/cli.py:48
+msgid "epona"
+msgstr "epona"
+
+#: dragonfly_grammars/cli.py:49
+msgid "athena"
+msgstr "athena"
+
+#: dragonfly_grammars/cli.py:50 dragonfly_grammars/global_.py:95
+msgid "echo"
+msgstr "echo"
+
+#: dragonfly_grammars/cli.py:51
+msgid "hera"
+msgstr "hera"
+
+#: dragonfly_grammars/cli.py:52
+msgid "hera boot"
+msgstr "hera boot"
+
+#: dragonfly_grammars/cli.py:53
+msgid "pele"
+msgstr "pele"
+
+#: dragonfly_grammars/cli.py:54
+msgid "eileen"
+msgstr "eileen"
+
+#: dragonfly_grammars/cli.py:55
+msgid "inanna"
+msgstr "inanna"
+
+#: dragonfly_grammars/cli.py:56
+msgid "anubis"
+msgstr "anubis"
+
+#: dragonfly_grammars/cli.py:73
 msgid "S S H [<ssh_options>] <server> [<command>]"
 msgstr "ssh [<ssh_options>] <server> [<command>]"
 
-#: dragonfly_grammars/cli.py:86
+#: dragonfly_grammars/cli.py:101
 msgid "firefox"
 msgstr "firefox"
 
-#: dragonfly_grammars/cli.py:87
+#: dragonfly_grammars/cli.py:102
 msgid "print working directory"
 msgstr "print werkmap"
 
-#: dragonfly_grammars/cli.py:88
+#: dragonfly_grammars/cli.py:103
 msgid "password gorilla"
 msgstr "password gorilla"
 
-#: dragonfly_grammars/cli.py:101
+#: dragonfly_grammars/cli.py:116
 msgid "command <command>"
 msgstr "<command>"
 
@@ -270,10 +330,6 @@ msgstr "charlie"
 #: dragonfly_grammars/global_.py:94
 msgid "delta"
 msgstr "delta"
-
-#: dragonfly_grammars/global_.py:95
-msgid "echo"
-msgstr "echo"
 
 #: dragonfly_grammars/global_.py:96
 msgid "foxtrot"
