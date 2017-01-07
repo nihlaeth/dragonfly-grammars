@@ -131,7 +131,7 @@ def load():
     """Register grammar."""
     global GRAMMAR
     GRAMMAR = Grammar('command_line_interface', context=(
-        AppContext('putty') | ProxyAppContext('terminator')))
+        AppContext('putty') | ProxyAppContext(executable='terminator')))
     GRAMMAR.add_rule(SshRule())
     GRAMMAR.add_rule(SimpleCommand())
     GRAMMAR.load()
