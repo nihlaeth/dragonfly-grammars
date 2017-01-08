@@ -136,7 +136,7 @@ def load():
     GRAMMAR.add_rule(SimpleCommand())
     GRAMMAR.load()
 
-    print 'global grammar: Loaded.'
+    print 'cli grammar: Loaded.'
 
 def unload():
     """Unregister grammar."""

@@ -8,7 +8,8 @@ from dragonfly_grammars import (
     aenea_,
     i3,
     global_,
-    cli)
+    cli,
+    vim)
 
 _LOCALEDIR = os.path.join(resource_filename(
     Requirement.parse('dragonfly_grammars'),
@@ -33,6 +34,7 @@ def load_grammars():
     i3.load()
     global_.load()
     cli.load()
+    vim.load()
 
 def unload_grammars():
     """Unregister grammars and reload grammar modules."""
@@ -40,3 +42,4 @@ def unload_grammars():
     i3.unload()
     global_.unload()
     cli.unload()
+    vim.unload()

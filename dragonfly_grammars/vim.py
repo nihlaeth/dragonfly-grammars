@@ -10,32 +10,20 @@ TODO: marks, symbols and digits, repetition, window mode
 """
 
 from aenea import (
+    Grammar,
+    AppContext,
+    ProxyAppContext,
     MappingRule,
     CompoundRule,
     RuleRef,
+    Literal,
     Choice,
+    Alternative,
     Repetition,
     Key)
 
 from dragonfly_grammars.common import _, extract_values
 from dragonfly_grammars.global_ import Number
-
-MOTION_OPERATORS = (
-    ('change', 'c'),
-    ('delete', 'd'),
-    ('yank', 'y'),
-    ('swap case', 'g,tilde'),
-    ('make lowercase', 'g,u'),
-    ('make uppercase', 'g,s-u'),
-    ('filter', 'exclamation'),
-    ('C filter', 'equal'),
-    ('text formatting', 'g,q'),
-    ('rotation 13 encoding', 'g,question'),
-    ('shift right', 'rangle'),
-    ('shift left', 'langle'),
-    ('define fold', 'z,f'),
-    ('call function', 'g,at'),
-    )
 
 class MotionRule(MappingRule):
 
@@ -48,17 +36,17 @@ class MotionRule(MappingRule):
             ################
             #  left/right  #
             ################
-            _("left"): "h",
-            _("right"): "l",
-            _("(zero|first char)"): "zero",
-            _("(caret|first non-blank char)"): "caret",
-            _("(dollar|last char)"): "dollar",
-            _("last visible non-blank char"): "g,underscore",
-            _("fist visible char"): "g,zero",
-            _("first visible non-blank char"): "g,caret",
+            _("(backward|left)"): "h",
+            _("(forward|right)"): "l",
+            _("(zero|first char[acter])"): "zero",
+            _("(caret|first non-blank char[acter])"): "caret",
+            _("(dollar|last char[acter])"): "dollar",
+            _("last visible non-blank char[acter]"): "g,underscore",
+            _("fist visible char[acter]"): "g,zero",
+            _("first visible non-blank char[acter]"): "g,caret",
             _("middle of line"): "g,m",
-            _("last visible char"): "g,dollar",
-            _("(pipe|to column)"): "bar",
+            _("last visible char[acter]"): "g,dollar",
+            _("(pipe|column)"): "bar",
             # _("find <char>"): "f",
             # _("backwards find <char>"): "s-f",
             #############
@@ -70,10 +58,10 @@ class MotionRule(MappingRule):
             _("visible down"): "g,j",
             _("(minus|linewise non-blank up)"): "minus",
             _("(plus|linewise non-blank down)"): "plus",
-            _("(underscore|down to first non-blank)"): "underscore",
+            _("(underscore|first non-blank line down)"): "underscore",
             _("goto"): "s-g",
             _("end of [last] line"): "c-end",
-            _("first non-blank char of [first] line"): "g,g",
+            _("first non-blank char[acter] on line"): "g,g",
             _("percent"): "percent",
             ##########
             #  word  #
@@ -89,10 +77,10 @@ class MotionRule(MappingRule):
             #################
             #  text object  #
             #################
-            _("((open|left) paren|sentence backward)"): "lparen",
-            _("((close|right) paren|sentence forward)"): "rparen",
-            _("((left|open) curly brace|paragraph backward)"): "lbrace",
-            _("((right|close) curly brace|paragraph forward"): "rbrace",
+            _("((open|left) paren|previous sentence)"): "lparen",
+            _("((close|right) paren|next sentence)"): "rparen",
+            _("((left|open) curly brace|previous paragraph)"): "lbrace",
+            _("((right|close) curly brace|next paragraph)"): "rbrace",
             _("next section start"): "rbracket,rbracket",
             _("next section end"): "rbracket,lbracket",
             _("previous section start"): "lbracket,rbracket",
@@ -144,14 +132,32 @@ class MotionOperatorRule(CompoundRule):
     """Commands with motion component."""
 
     exported = False
-    _motion_cmd = _('delete')
-    _motion_char = 'd'
 
     def __init__(self, *args, **kwargs):
         self.spec = _(
-            "{} [<numbers>] (<motion>|<operatormotion>) [into buffer <buffer>] [<mode> mode]").format(
-                self._motion_cmd)
+            "<operator> "
+            "(<line>|to "
+            "(<motion>|<operatormotion>) "
+            "[<numbers>] "
+            "[into buffer <buffer>] "
+            "[<mode> mode])")
         self.extras = [
+            Choice(name='operator', choices={
+                _('change'): 'c',
+                _('delete'): 'd',
+                _('yank'): 'y',
+                _('swap case'): 'g,tilde',
+                _('make lowercase'): 'g,u',
+                _('make uppercase'): 'g,s-u',
+                _('filter'): 'exclamation',
+                _('C filter'): 'equal',
+                _('text formatting'): 'g,q',
+                _('rotation 13 encoding'): 'g,question',
+                _('shift right'): 'rangle',
+                _('shift left'): 'langle',
+                _('define fold'): 'z,f',
+                _('call function'): 'g,at'}),
+            Literal(name='line', text=_('line')),
             Repetition(
                 name='numbers',
                 child=RuleRef(rule=Number()),
@@ -185,7 +191,15 @@ class MotionOperatorRule(CompoundRule):
         #####################
         #  motion operator  #
         #####################
-        cmd_elements.append(self._motion_char)
+        cmd_elements.append(
+            node.get_child_by_name('operator').value())
+
+        #########################
+        #  operator repetition  #
+        #########################
+        # e.g: delete line : dd
+        if node.has_child_with_name('line'):
+            cmd_elements.append(cmd_elements[-1])
 
         ##########
         #  mode  #
@@ -252,7 +266,7 @@ class VimNormalRule(MappingRule):
             _("cap append"): "s-a",
             _("copy to end of line"): "s-c",
             _("delete to end of line"): "s-d",
-            _("find char left"): "s-f",
+            _("find char[acter] left"): "s-f",
             _("goto line from top of screen"): "s-h",
             _("insert at start of line"): "s-i",
             _("join lines"): "s-j",
@@ -265,10 +279,10 @@ class VimNormalRule(MappingRule):
             _("external mode"): "s-q",
             _("replace mode"): "s-r",
             _("switch lines"): "s-s",
-            _("backwards move to char"): "s-t",
+            _("backwards move to char[acter]"): "s-t",
             _("undo on line"): "s-u",
             _("visual line"): "s-v",
-            _("backwards delete char"): "s-x",
+            _("backwards delete char[acter]"): "s-x",
             _("yank line"): "s-y",
             _("store and exit"): "s-z,s-z",
             _("unsafe exit"): "s-z,s-q",
@@ -277,3 +291,100 @@ class VimNormalRule(MappingRule):
             }
 
         MappingRule.__init__(self, *args, **kwargs)
+
+class TrueVimNormalRule(CompoundRule):
+
+    """All the repeatable commands for vim's normal mode."""
+
+    exported = False
+
+    def __init__(self, *args, **kwargs):
+        self.spec = _("<cmd>")
+        self.extras = [
+            Alternative(name='cmd', children=(
+                RuleRef(
+                    name='motion_operator',
+                    rule=MotionOperatorRule()),
+                RuleRef(
+                    name='motion', rule=MotionRule()),
+                RuleRef(
+                    name='normal', rule=VimNormalRule()),
+                RuleRef(name='number', rule=Number()),
+                ))
+            ]
+
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        if node.has_child_with_name('motion_operator'):
+            return node.get_child_by_name(
+                'motion_operator').value()
+        elif node.has_child_with_name('motion'):
+            return node.get_child_by_name(
+                'motion').value()
+        elif node.has_child_with_name('normal'):
+            return node.get_child_by_name(
+                'normal').value()
+        elif node.has_child_with_name('number'):
+            return node.get_child_by_name(
+                'number').value()
+        else:
+            pass
+
+    def _process_recognition(self, node, extras):
+        Key(self.value(node)).execute()
+
+class TrueVimNormalRepetitionRule(CompoundRule):
+
+    """Repeat TrueVimNormalRule."""
+
+    def __init__(self, *args, **kwargs):
+        self.spec = _("<cmds>")
+        self.extras = [
+            Repetition(
+                name='cmds',
+                child=RuleRef(rule=TrueVimNormalRule()),
+                min=1,
+                max=15)
+            ]
+
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        extras = extract_values(node, (
+            TrueVimNormalRule), recurse=True)
+        return ','.join(extras)
+
+    def _process_recognition(self, node, extras):
+        Key(self.value(node)).execute()
+
+
+TRUE_VIM_NORMAL_GRAMMAR = None
+
+def load():
+    """Register grammar."""
+    global TRUE_VIM_NORMAL_GRAMMAR
+    TRUE_VIM_NORMAL_GRAMMAR = Grammar(
+        'true_vim_normal_mode', context=(
+            (AppContext(
+                'putty', title=' VIM ') & \
+             AppContext(
+                 'putty', title='mode:Normal')) | \
+            (ProxyAppContext(
+                cls='terminator',
+                title=' VIM ') & \
+             ProxyAppContext(
+                 cls='terminator',
+                 title='mode:Insert'))))
+    TRUE_VIM_NORMAL_GRAMMAR.add_rule(
+        TrueVimNormalRepetitionRule())
+    TRUE_VIM_NORMAL_GRAMMAR.load()
+
+    print 'vim grammars: Loaded.'
+
+def unload():
+    """Unregister grammar."""
+    global TRUE_VIM_NORMAL_GRAMMAR
+    if TRUE_VIM_NORMAL_GRAMMAR is None:
+        TRUE_VIM_NORMAL_GRAMMAR.unload()
+        TRUE_VIM_NORMAL_GRAMMAR = None

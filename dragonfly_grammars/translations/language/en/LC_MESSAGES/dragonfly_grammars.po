@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-05 19:31+0100\n"
+"POT-Creation-Date: 2017-01-08 22:05+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -31,107 +31,107 @@ msgstr "enable proxy server"
 msgid "set proxy server to <proxy>"
 msgstr "set proxy server to <proxy>"
 
-#: dragonfly_grammars/cli.py:21
+#: dragonfly_grammars/cli.py:23
 msgid "[with] X forwarding"
 msgstr "[with] X forwarding"
 
-#: dragonfly_grammars/cli.py:31
+#: dragonfly_grammars/cli.py:33
 msgid "[<user> at] <server>"
 msgstr "[<user> at] <server>"
 
-#: dragonfly_grammars/cli.py:35
+#: dragonfly_grammars/cli.py:37
 msgid "me"
 msgstr "me"
 
-#: dragonfly_grammars/cli.py:39
+#: dragonfly_grammars/cli.py:41
 msgid "cerridwen"
 msgstr "cerridwen"
 
-#: dragonfly_grammars/cli.py:40
+#: dragonfly_grammars/cli.py:42
 msgid "yemanja"
 msgstr "yemanja"
 
-#: dragonfly_grammars/cli.py:41
+#: dragonfly_grammars/cli.py:43
 msgid "iris"
 msgstr "iris"
 
-#: dragonfly_grammars/cli.py:42
+#: dragonfly_grammars/cli.py:44
 msgid "aine"
 msgstr "aine"
 
-#: dragonfly_grammars/cli.py:43
+#: dragonfly_grammars/cli.py:45
 msgid "dayea"
 msgstr "dayea"
 
-#: dragonfly_grammars/cli.py:44
+#: dragonfly_grammars/cli.py:46
 msgid "brighid"
 msgstr "brighid"
 
-#: dragonfly_grammars/cli.py:45
+#: dragonfly_grammars/cli.py:47
 msgid "freya"
 msgstr "freya"
 
-#: dragonfly_grammars/cli.py:46
+#: dragonfly_grammars/cli.py:48
 msgid "arthemis"
 msgstr "arthemis"
 
-#: dragonfly_grammars/cli.py:47
+#: dragonfly_grammars/cli.py:49
 msgid "morrighan"
 msgstr "morrighan"
 
-#: dragonfly_grammars/cli.py:48
+#: dragonfly_grammars/cli.py:50
 msgid "epona"
 msgstr "epona"
 
-#: dragonfly_grammars/cli.py:49
+#: dragonfly_grammars/cli.py:51
 msgid "athena"
 msgstr "athena"
 
-#: dragonfly_grammars/cli.py:50 dragonfly_grammars/global_.py:95
+#: dragonfly_grammars/cli.py:52 dragonfly_grammars/global_.py:95
 msgid "echo"
 msgstr "echo"
 
-#: dragonfly_grammars/cli.py:51
+#: dragonfly_grammars/cli.py:53
 msgid "hera"
 msgstr "hera"
 
-#: dragonfly_grammars/cli.py:52
+#: dragonfly_grammars/cli.py:54
 msgid "hera boot"
 msgstr "hera boot"
 
-#: dragonfly_grammars/cli.py:53
+#: dragonfly_grammars/cli.py:55
 msgid "pele"
 msgstr "pele"
 
-#: dragonfly_grammars/cli.py:54
+#: dragonfly_grammars/cli.py:56
 msgid "eileen"
 msgstr "eileen"
 
-#: dragonfly_grammars/cli.py:55
+#: dragonfly_grammars/cli.py:57
 msgid "inanna"
 msgstr "inanna"
 
-#: dragonfly_grammars/cli.py:56
+#: dragonfly_grammars/cli.py:58
 msgid "anubis"
 msgstr "anubis"
 
-#: dragonfly_grammars/cli.py:73
+#: dragonfly_grammars/cli.py:75
 msgid "S S H [<ssh_options>] <server> [<command>]"
 msgstr "ssh [<ssh_options>] <server> [<command>]"
 
-#: dragonfly_grammars/cli.py:101
+#: dragonfly_grammars/cli.py:103
 msgid "firefox"
 msgstr "firefox"
 
-#: dragonfly_grammars/cli.py:102
+#: dragonfly_grammars/cli.py:104
 msgid "print working directory"
 msgstr "print working directory"
 
-#: dragonfly_grammars/cli.py:103
+#: dragonfly_grammars/cli.py:105
 msgid "password gorilla"
 msgstr "password gorilla"
 
-#: dragonfly_grammars/cli.py:116
+#: dragonfly_grammars/cli.py:118
 msgid "command <command>"
 msgstr "<command>"
 
@@ -535,11 +535,511 @@ msgstr "left"
 msgid "right"
 msgstr "right"
 
-#: dragonfly_grammars/i3.py:63
+#: dragonfly_grammars/i3.py:63 dragonfly_grammars/vim.py:55
 msgid "up"
 msgstr "up"
 
-#: dragonfly_grammars/i3.py:64
+#: dragonfly_grammars/i3.py:64 dragonfly_grammars/vim.py:56
 msgid "down"
 msgstr "down"
+
+#: dragonfly_grammars/vim.py:39
+msgid "(backward|left)"
+msgstr "(backward|left)"
+
+#: dragonfly_grammars/vim.py:40
+msgid "(forward|right)"
+msgstr "(forward|right)"
+
+#: dragonfly_grammars/vim.py:41
+msgid "(zero|first char[acter])"
+msgstr "(zero|first char[acter])"
+
+#: dragonfly_grammars/vim.py:42
+msgid "(caret|first non-blank char[acter])"
+msgstr "(caret|first non-blank char[acter])"
+
+#: dragonfly_grammars/vim.py:43
+msgid "(dollar|last char[acter])"
+msgstr "(dollar|last char[acter])"
+
+#: dragonfly_grammars/vim.py:44
+msgid "last visible non-blank char[acter]"
+msgstr "last visible non-blank char[acter]"
+
+#: dragonfly_grammars/vim.py:45
+msgid "fist visible char[acter]"
+msgstr "fist visible char[acter]"
+
+#: dragonfly_grammars/vim.py:46
+msgid "first visible non-blank char[acter]"
+msgstr "first visible non-blank char[acter]"
+
+#: dragonfly_grammars/vim.py:47
+msgid "middle of line"
+msgstr "middle of line"
+
+#: dragonfly_grammars/vim.py:48
+msgid "last visible char[acter]"
+msgstr "last visible char[acter]"
+
+#: dragonfly_grammars/vim.py:49
+msgid "(pipe|column)"
+msgstr "(pipe|column)"
+
+#: dragonfly_grammars/vim.py:57
+msgid "visible up"
+msgstr "visible up"
+
+#: dragonfly_grammars/vim.py:58
+msgid "visible down"
+msgstr "visible down"
+
+#: dragonfly_grammars/vim.py:59
+msgid "(minus|linewise non-blank up)"
+msgstr "(minus|linewise non-blank up)"
+
+#: dragonfly_grammars/vim.py:60
+msgid "(plus|linewise non-blank down)"
+msgstr "(plus|linewise non-blank down)"
+
+#: dragonfly_grammars/vim.py:61
+msgid "(underscore|first non-blank line down)"
+msgstr "(underscore|first non-blank line down)"
+
+#: dragonfly_grammars/vim.py:62
+msgid "goto"
+msgstr "goto"
+
+#: dragonfly_grammars/vim.py:63
+msgid "end of [last] line"
+msgstr "end of [last] line"
+
+#: dragonfly_grammars/vim.py:64
+msgid "first non-blank char[acter] on line"
+msgstr "first non-blank char[acter] on line"
+
+#: dragonfly_grammars/vim.py:65
+msgid "percent"
+msgstr "percent"
+
+#: dragonfly_grammars/vim.py:69
+msgid "word"
+msgstr "word"
+
+#: dragonfly_grammars/vim.py:70
+msgid "(big|cap) word"
+msgstr "(big|cap) word"
+
+#: dragonfly_grammars/vim.py:71
+msgid "end"
+msgstr "end"
+
+#: dragonfly_grammars/vim.py:72
+msgid "(big|cap) end"
+msgstr "(big|cap) end"
+
+#: dragonfly_grammars/vim.py:73
+msgid "back"
+msgstr "back"
+
+#: dragonfly_grammars/vim.py:74
+msgid "(big|cap) back"
+msgstr "(big|cap) back"
+
+#: dragonfly_grammars/vim.py:75
+msgid "backward end"
+msgstr "backward end"
+
+#: dragonfly_grammars/vim.py:76
+msgid "backward (big|cap) end"
+msgstr "backward (big|cap) end"
+
+#: dragonfly_grammars/vim.py:80
+msgid "((open|left) paren|previous sentence)"
+msgstr "((open|left) paren|previous sentence)"
+
+#: dragonfly_grammars/vim.py:81
+msgid "((close|right) paren|next sentence)"
+msgstr "((close|right) paren|next sentence)"
+
+#: dragonfly_grammars/vim.py:82
+msgid "((left|open) curly brace|previous paragraph)"
+msgstr "((left|open) curly brace|previous paragraph)"
+
+#: dragonfly_grammars/vim.py:83
+msgid "((right|close) curly brace|next paragraph)"
+msgstr "((right|close) curly brace|next paragraph)"
+
+#: dragonfly_grammars/vim.py:84
+msgid "next section start"
+msgstr "next section start"
+
+#: dragonfly_grammars/vim.py:85
+msgid "next section end"
+msgstr "next section end"
+
+#: dragonfly_grammars/vim.py:86
+msgid "previous section start"
+msgstr "previous section start"
+
+#: dragonfly_grammars/vim.py:87
+msgid "previous section end"
+msgstr "previous section end"
+
+#: dragonfly_grammars/vim.py:91
+msgid "ex"
+msgstr "ex"
+
+#: dragonfly_grammars/vim.py:106
+msgid "a word"
+msgstr "a word"
+
+#: dragonfly_grammars/vim.py:107
+msgid "inner word"
+msgstr "inner word"
+
+#: dragonfly_grammars/vim.py:108
+msgid "a (big|cap) word"
+msgstr "a (big|cap) word"
+
+#: dragonfly_grammars/vim.py:109
+msgid "inner (big|cap) word"
+msgstr "inner (big|cap) word"
+
+#: dragonfly_grammars/vim.py:110
+msgid "a sentence"
+msgstr "a sentence"
+
+#: dragonfly_grammars/vim.py:111
+msgid "inner sentence"
+msgstr "inner sentence"
+
+#: dragonfly_grammars/vim.py:112
+msgid "a paragraph"
+msgstr "a paragraph"
+
+#: dragonfly_grammars/vim.py:113
+msgid "inner paragraph"
+msgstr "inner paragraph"
+
+#: dragonfly_grammars/vim.py:114
+msgid "a bracket block"
+msgstr "a bracket block"
+
+#: dragonfly_grammars/vim.py:115
+msgid "inner bracket block"
+msgstr "inner bracket block"
+
+#: dragonfly_grammars/vim.py:116
+msgid "a paren block"
+msgstr "a paren block"
+
+#: dragonfly_grammars/vim.py:117
+msgid "inner paren block"
+msgstr "inner paren block"
+
+#: dragonfly_grammars/vim.py:118
+msgid "an angle block"
+msgstr "an angle block"
+
+#: dragonfly_grammars/vim.py:119
+msgid "inner angle block"
+msgstr "inner angle block"
+
+#: dragonfly_grammars/vim.py:120
+msgid "a tag block"
+msgstr "a tag block"
+
+#: dragonfly_grammars/vim.py:121
+msgid "inner tag block"
+msgstr "inner tag block"
+
+#: dragonfly_grammars/vim.py:122
+msgid "a curly block"
+msgstr "a curly block"
+
+#: dragonfly_grammars/vim.py:123
+msgid "inner curly block"
+msgstr "inner curly block"
+
+#: dragonfly_grammars/vim.py:124
+msgid "a quoted string"
+msgstr "a quoted string"
+
+#: dragonfly_grammars/vim.py:125
+msgid "inner quoted string"
+msgstr "inner quoted string"
+
+#: dragonfly_grammars/vim.py:137
+msgid ""
+"<operator> (<line>|to (<motion>|<operatormotion>) [<numbers>] [into "
+"buffer <buffer>] [<mode> mode])"
+msgstr ""
+"<operator> (<line>|to (<motion>|<operatormotion>) [<numbers>] [into "
+"buffer <buffer>] [<mode> mode])"
+
+#: dragonfly_grammars/vim.py:146
+msgid "change"
+msgstr "change"
+
+#: dragonfly_grammars/vim.py:147
+msgid "delete"
+msgstr "delete"
+
+#: dragonfly_grammars/vim.py:148
+msgid "yank"
+msgstr "yank"
+
+#: dragonfly_grammars/vim.py:149
+msgid "swap case"
+msgstr "swap case"
+
+#: dragonfly_grammars/vim.py:150
+msgid "make lowercase"
+msgstr "make lowercase"
+
+#: dragonfly_grammars/vim.py:151
+msgid "make uppercase"
+msgstr "make uppercase"
+
+#: dragonfly_grammars/vim.py:152
+msgid "filter"
+msgstr "filter"
+
+#: dragonfly_grammars/vim.py:153
+msgid "C filter"
+msgstr "C filter"
+
+#: dragonfly_grammars/vim.py:154
+msgid "text formatting"
+msgstr "text formatting"
+
+#: dragonfly_grammars/vim.py:155
+msgid "rotation 13 encoding"
+msgstr "rotation 13 encoding"
+
+#: dragonfly_grammars/vim.py:156
+msgid "shift right"
+msgstr "shift right"
+
+#: dragonfly_grammars/vim.py:157
+msgid "shift left"
+msgstr "shift left"
+
+#: dragonfly_grammars/vim.py:158
+msgid "define fold"
+msgstr "define fold"
+
+#: dragonfly_grammars/vim.py:159
+msgid "call function"
+msgstr "call function"
+
+#: dragonfly_grammars/vim.py:160 dragonfly_grammars/vim.py:173
+msgid "line"
+msgstr "line"
+
+#: dragonfly_grammars/vim.py:169
+msgid "default"
+msgstr "default"
+
+#: dragonfly_grammars/vim.py:172
+msgid "character"
+msgstr "character"
+
+#: dragonfly_grammars/vim.py:174
+msgid "block"
+msgstr "block"
+
+#: dragonfly_grammars/vim.py:245
+msgid "addition"
+msgstr "addition"
+
+#: dragonfly_grammars/vim.py:246
+msgid "scroll back screen"
+msgstr "scroll back screen"
+
+#: dragonfly_grammars/vim.py:247
+msgid "interrupt"
+msgstr "interrupt"
+
+#: dragonfly_grammars/vim.py:248
+msgid "scroll down half"
+msgstr "scroll down half"
+
+#: dragonfly_grammars/vim.py:249
+msgid "scroll extra up"
+msgstr "scroll extra up"
+
+#: dragonfly_grammars/vim.py:250
+msgid "scroll forward screen"
+msgstr "scroll forward screen"
+
+#: dragonfly_grammars/vim.py:251
+msgid "display file name"
+msgstr "display file name"
+
+#: dragonfly_grammars/vim.py:252
+msgid "redraw screen"
+msgstr "redraw screen"
+
+#: dragonfly_grammars/vim.py:253
+msgid "jumplist newer"
+msgstr "jumplist newer"
+
+#: dragonfly_grammars/vim.py:254
+msgid "jumplist older"
+msgstr "jumplist older"
+
+#: dragonfly_grammars/vim.py:255
+msgid "redo"
+msgstr "redo"
+
+#: dragonfly_grammars/vim.py:256
+msgid "tag older"
+msgstr "tag older"
+
+#: dragonfly_grammars/vim.py:257
+msgid "scroll half up"
+msgstr "scroll half up"
+
+#: dragonfly_grammars/vim.py:258
+msgid "visual block"
+msgstr "visual block"
+
+#: dragonfly_grammars/vim.py:259
+msgid "window"
+msgstr "window"
+
+#: dragonfly_grammars/vim.py:260
+msgid "subtract"
+msgstr "subtract"
+
+#: dragonfly_grammars/vim.py:261
+msgid "scroll down"
+msgstr "scroll down"
+
+#: dragonfly_grammars/vim.py:262
+msgid "suspend"
+msgstr "suspend"
+
+#: dragonfly_grammars/vim.py:263
+msgid "insertmode"
+msgstr "insertmode"
+
+#: dragonfly_grammars/vim.py:264
+msgid "indent"
+msgstr "indent"
+
+#: dragonfly_grammars/vim.py:265
+msgid "edit alternate"
+msgstr "edit alternate"
+
+#: dragonfly_grammars/vim.py:266
+msgid "cap append"
+msgstr "cap append"
+
+#: dragonfly_grammars/vim.py:267
+msgid "copy to end of line"
+msgstr "copy to end of line"
+
+#: dragonfly_grammars/vim.py:268
+msgid "delete to end of line"
+msgstr "delete to end of line"
+
+#: dragonfly_grammars/vim.py:269
+msgid "find char[acter] left"
+msgstr "find char[acter] left"
+
+#: dragonfly_grammars/vim.py:270
+msgid "goto line from top of screen"
+msgstr "goto line from top of screen"
+
+#: dragonfly_grammars/vim.py:271
+msgid "insert at start of line"
+msgstr "insert at start of line"
+
+#: dragonfly_grammars/vim.py:272
+msgid "join lines"
+msgstr "join lines"
+
+#: dragonfly_grammars/vim.py:273
+msgid "lookup keyword"
+msgstr "lookup keyword"
+
+#: dragonfly_grammars/vim.py:274
+msgid "goto line from bottom of screen"
+msgstr "goto line from bottom of screen"
+
+#: dragonfly_grammars/vim.py:275
+msgid "goto middle of screen"
+msgstr "goto middle of screen"
+
+#: dragonfly_grammars/vim.py:276
+msgid "backwards next"
+msgstr "backwards next"
+
+#: dragonfly_grammars/vim.py:277
+msgid "insert on newline before"
+msgstr "insert on newline before"
+
+#: dragonfly_grammars/vim.py:278
+msgid "paste before"
+msgstr "paste before"
+
+#: dragonfly_grammars/vim.py:279
+msgid "external mode"
+msgstr "external mode"
+
+#: dragonfly_grammars/vim.py:280
+msgid "replace mode"
+msgstr "replace mode"
+
+#: dragonfly_grammars/vim.py:281
+msgid "switch lines"
+msgstr "switch lines"
+
+#: dragonfly_grammars/vim.py:282
+msgid "backwards move to char[acter]"
+msgstr "backwards move to char[acter]"
+
+#: dragonfly_grammars/vim.py:283
+msgid "undo on line"
+msgstr "undo on line"
+
+#: dragonfly_grammars/vim.py:284
+msgid "visual line"
+msgstr "visual line"
+
+#: dragonfly_grammars/vim.py:285
+msgid "backwards delete char[acter]"
+msgstr "backwards delete char[acter]"
+
+#: dragonfly_grammars/vim.py:286
+msgid "yank line"
+msgstr "yank line"
+
+#: dragonfly_grammars/vim.py:287
+msgid "store and exit"
+msgstr "store and exit"
+
+#: dragonfly_grammars/vim.py:288
+msgid "unsafe exit"
+msgstr "unsafe exit"
+
+#: dragonfly_grammars/vim.py:289
+msgid "append"
+msgstr "append"
+
+#: dragonfly_grammars/vim.py:290
+msgid "(insert|inner)"
+msgstr "(insert|inner)"
+
+#: dragonfly_grammars/vim.py:302
+msgid "<cmd>"
+msgstr "<cmd>"
+
+#: dragonfly_grammars/vim.py:342
+msgid "<cmds>"
+msgstr "<cmds>"
 
