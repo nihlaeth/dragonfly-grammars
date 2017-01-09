@@ -6,11 +6,10 @@ from aenea import (
     Alternative,
     Choice,
     Repetition,
-    AppContext,
-    ProxyAppContext,
     RuleRef,
     CompoundRule)
 from dragonfly_grammars.common import _, execute_keystr, extract_values
+from dragonfly_grammars.context import terminal_not_vim
 
 class SshOptions(MappingRule):
 
@@ -130,8 +129,9 @@ GRAMMAR = None
 def load():
     """Register grammar."""
     global GRAMMAR
-    GRAMMAR = Grammar('command_line_interface', context=(
-        AppContext('putty') | ProxyAppContext(cls='terminator')))
+    GRAMMAR = Grammar(
+        'command_line_interface',
+        context=terminal_not_vim())
     GRAMMAR.add_rule(SshRule())
     GRAMMAR.add_rule(SimpleCommand())
     GRAMMAR.load()

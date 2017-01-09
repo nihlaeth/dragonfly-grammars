@@ -3,12 +3,12 @@ from aenea import (
     Grammar,
     MappingRule,
     Key,
-    ProxyPlatformContext,
     Function,
     Choice,
     IntegerRef,
     Dictation)
 from dragonfly_grammars.common import _, execute_keystr
+from dragonfly_grammars.context import linux
 
 class OpenProcessRule(MappingRule):
 
@@ -70,8 +70,7 @@ GRAMMAR = None
 def load():
     """Register grammar."""
     global GRAMMAR
-    context = ProxyPlatformContext('linux')
-    GRAMMAR = Grammar('i3', context=context)
+    GRAMMAR = Grammar('i3', context=linux())
     GRAMMAR.add_rule(OpenProcessRule())
     GRAMMAR.add_rule(WorkspaceRules())
     GRAMMAR.load()

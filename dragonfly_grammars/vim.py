@@ -12,8 +12,6 @@ TODO: window mode, :commands, rest of normal keybindings, filters
 
 from aenea import (
     Grammar,
-    AppContext,
-    ProxyAppContext,
     MappingRule,
     CompoundRule,
     RuleRef,
@@ -24,6 +22,7 @@ from aenea import (
     Key)
 
 from dragonfly_grammars.common import _, extract_values
+from dragonfly_grammars.context import vim_normal_mode
 from dragonfly_grammars.global_ import Number, AnyCharacter
 
 ##################################
@@ -513,23 +512,14 @@ def load():
     """Register grammar."""
     global TRUE_VIM_NORMAL_GRAMMAR
     TRUE_VIM_NORMAL_GRAMMAR = Grammar(
-        'true_vim_normal_mode', context=(
-            (AppContext(
-                'putty', title=' VIM ') & \
-             AppContext(
-                 'putty', title='mode:Normal')) | \
-            (ProxyAppContext(
-                cls='terminator',
-                title=' VIM ') & \
-             ProxyAppContext(
-                 cls='terminator',
-                 title='mode:Normal'))))
+        'true_vim_normal_mode',
+        context=vim_normal_mode())
     TRUE_VIM_NORMAL_GRAMMAR.add_rule(
         TrueVimNormalRepetitionRule())
     TRUE_VIM_NORMAL_GRAMMAR.load()
 
     print 'vim grammars: Loaded.'
-    print TRUE_VIM_NORMAL_GRAMMAR.get_complexity_string()
+    # print TRUE_VIM_NORMAL_GRAMMAR.get_complexity_string()
 
 def unload():
     """Unregister grammar."""
