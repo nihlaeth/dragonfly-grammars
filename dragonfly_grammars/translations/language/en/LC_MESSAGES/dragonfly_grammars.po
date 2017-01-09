@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-09 19:03+0100\n"
+"POT-Creation-Date: 2017-01-09 19:08+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -1365,16 +1365,16 @@ msgid "window split and edit file"
 msgstr "window split and edit file"
 
 #: dragonfly_grammars/vim.py:410
-msgid "window split, edit file and jump"
-msgstr "window split, edit file and jump"
+msgid "window split edit file and jump"
+msgstr "window split edit file and jump"
 
 #: dragonfly_grammars/vim.py:412
 msgid "window tab and edit file"
 msgstr "window tab and edit file"
 
 #: dragonfly_grammars/vim.py:413
-msgid "window tab, edit file and jump"
-msgstr "window tab, edit file and jump"
+msgid "window tab edit file and jump"
+msgstr "window tab edit file and jump"
 
 #: dragonfly_grammars/vim.py:414
 msgid "window left"

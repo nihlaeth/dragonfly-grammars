@@ -407,10 +407,10 @@ class VimNormalRule(MappingRule):
             _("window close"): "c-w,c",
             _("window split and jump to definition"): "c-w,d",
             _("window split and edit file"): "c-w,f",
-            _("window split, edit file and jump"): "c-w,s-f",
+            _("window split edit file and jump"): "c-w,s-f",
             # TODO: add c-w,g,] and c-w,g,}
             _("window tab and edit file"): "c-w,g,f",
-            _("window tab, edit file and jump"): "c-w,g,s-f",
+            _("window tab edit file and jump"): "c-w,g,s-f",
             _("window left"): "c-w,h",
             _("window split and jump to declaration"): "c-w,i",
             _("window down"): "c-w,j",
