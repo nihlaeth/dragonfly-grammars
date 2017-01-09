@@ -429,10 +429,10 @@ class VimNormalRule(MappingRule):
             _("window width"): "c-w,bar",
             _("window tag in preview"): "c-w,rbrace",
             }
-        self.extras = {
+        self.extras = [
             # TODO: tighten register to [a-zA-Zs-9.%#:-"]
             RuleRef(name='register', rule=AnyCharacter()),
-            RuleRef(name='char', rule=AnyCharacter())}
+            RuleRef(name='char', rule=AnyCharacter())]
 
         MappingRule.__init__(self, *args, **kwargs)
 
