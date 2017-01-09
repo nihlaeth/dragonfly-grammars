@@ -3,12 +3,17 @@
 from aenea import (
     Grammar,
     MappingRule,
+    Key,
     Alternative,
     Choice,
     Repetition,
     RuleRef,
     CompoundRule)
-from dragonfly_grammars.common import _, execute_keystr, extract_values
+from dragonfly_grammars.common import (
+    _,
+    execute_keystr,
+    extract_values,
+    text_to_keystr)
 from dragonfly_grammars.context import terminal_not_vim
 
 class SshOptions(MappingRule):
@@ -105,7 +110,7 @@ class SimpleCommand(MappingRule):
         MappingRule.__init__(self, *args, **kwargs)
 
     def _process_recognition(self, value, extras):
-        execute_keystr(value)
+        Key(value).execute()
 
 class Command(CompoundRule):
 
@@ -120,8 +125,8 @@ class Command(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return extract_values(node, (
-            SimpleCommand), recurse=True)[0]
+        return text_to_keystr(extract_values(node, (
+            SimpleCommand), recurse=True)[0])
 
 
 GRAMMAR = None

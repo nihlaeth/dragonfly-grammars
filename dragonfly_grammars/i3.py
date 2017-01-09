@@ -6,9 +6,10 @@ from aenea import (
     Function,
     Choice,
     IntegerRef,
-    Dictation)
-from dragonfly_grammars.common import _, execute_keystr
+    RuleRef)
+from dragonfly_grammars.common import _
 from dragonfly_grammars.context import linux
+from dragonfly_grammars.cli import Command
 
 class OpenProcessRule(MappingRule):
 
@@ -17,10 +18,10 @@ class OpenProcessRule(MappingRule):
     def __init__(self, *args, **kwargs):
         self.mapping = {
             _('open terminal'): Key('w-t'),
-            # TODO: treat text like basic commandline
-            _('open process <text>'): Key('w-m') + Function(execute_keystr),
+            _('open process [<cmd>]'): Key('w-m,%(cmd)s')
         }
-        self.extras = [Dictation('text')]
+        self.extras = [
+            RuleRef(name='cmd', rule=Command())]
         MappingRule.__init__(self, *args, **kwargs)
 
 def n_to_key(n):
