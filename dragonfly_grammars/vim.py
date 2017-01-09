@@ -340,7 +340,7 @@ class VimNormalRule(MappingRule):
             _("undo"): "u",
             _("undo on line"): "s-u",
             _("(repeat|period)"): "dot",
-            _("(at|repeat register <register>"): "at,%(register)s",
+            _("(at|repeat register <register>)"): "at,%(register)s",
             _("repeat previous register repeat"): "at,at",
             _("repeat ex"): "at,colon",
             _("(ampersand|repeat [last] (search|replace))"): "ampersand",
