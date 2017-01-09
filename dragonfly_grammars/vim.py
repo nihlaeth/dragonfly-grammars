@@ -493,7 +493,7 @@ class TrueVimNormalRepetitionRule(CompoundRule):
                 name='cmds',
                 child=RuleRef(rule=TrueVimNormalRule()),
                 min=1,
-                max=15)
+                max=5)
             ]
 
         CompoundRule.__init__(self, *args, **kwargs)
