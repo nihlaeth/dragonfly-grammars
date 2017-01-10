@@ -23,6 +23,8 @@ def extract_values(node, types, recurse=False):
 
 def text_to_keystr(text):
     """Translate string to keynames for Key."""
+    if text is None:
+        return None
     charnames = {
         '<': 'langle',
         '{': 'lbrace',
