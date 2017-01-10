@@ -394,7 +394,7 @@ class VimNormalRule(MappingRule):
             _("window move (H|hotel|left)"): "c-w,s-h",
             _("window move (J|juliet|down)"): "c-w,s-j",
             _("window move (K|kilo|up)"): "c-w,s-k",
-            _("window move (L|Lima|right)"): "c-w,s-l",
+            _("window move (L|lima|right)"): "c-w,s-l",
             _("window preview"): "c-w,s-p",
             _("window rotate up"): "c-w,s-r",
             _("window move to [new] tab"): "c-w,s-t",

@@ -2,6 +2,7 @@
 from aenea import (
     Grammar,
     MappingRule,
+    CompoundRule,
     Key,
     Function,
     Choice,
@@ -11,7 +12,7 @@ from dragonfly_grammars.common import _
 from dragonfly_grammars.context import linux
 from dragonfly_grammars.cli import Command
 
-class OpenProcessRule(MappingRule):
+class OpenProcessRule(CompoundRule):
 
     """Rules for opening process."""
 
@@ -19,7 +20,7 @@ class OpenProcessRule(MappingRule):
         self.spec = _('open process [<cmd>]')
         self.extras = [
             RuleRef(name='cmd', rule=Command())]
-        MappingRule.__init__(self, *args, **kwargs)
+        CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
         cmd = 'w-m'
