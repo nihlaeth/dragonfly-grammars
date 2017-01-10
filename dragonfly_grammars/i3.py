@@ -6,11 +6,12 @@ from aenea import (
     Key,
     Function,
     Choice,
+    Alternative,
     IntegerRef,
     RuleRef)
 from dragonfly_grammars.common import _, text_to_keystr
 from dragonfly_grammars.context import linux
-from dragonfly_grammars.cli import Command
+from dragonfly_grammars.cli import Command, SshRule
 
 class OpenProcessRule(CompoundRule):
 
@@ -19,7 +20,10 @@ class OpenProcessRule(CompoundRule):
     def __init__(self, *args, **kwargs):
         self.spec = _('open process [<cmd>]')
         self.extras = [
-            RuleRef(name='cmd', rule=Command())]
+            Alternative(name='cmd', children=(
+                RuleRef(name='ssh', rule=SshRule()),
+                RuleRef(name='command', rule=Command()),
+                )),]
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
@@ -27,6 +31,9 @@ class OpenProcessRule(CompoundRule):
         if node.has_child_with_name('cmd'):
             cmd += ",{}".format(text_to_keystr(
                 node.get_child_by_name('cmd')))
+        if node.has_child_with_name('ssh'):
+            cmd += ",{}".format(text_to_keystr(
+                node.get_child_by_name('ssh')))
         return cmd
 
     def _process_recognition(self, node, extras):
