@@ -9,6 +9,7 @@ from dragonfly_grammars import (
     i3,
     global_,
     cli,
+    password,
     vim)
 
 _LOCALEDIR = os.path.join(resource_filename(
@@ -34,6 +35,7 @@ def load_grammars():
     i3.load()
     global_.load()
     cli.load()
+    password.load()
     vim.load()
 
 def unload_grammars():
@@ -42,4 +44,5 @@ def unload_grammars():
     i3.unload()
     global_.unload()
     cli.unload()
+    password.unload()
     vim.unload()

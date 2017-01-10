@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-09 20:34+0100\n"
+"POT-Creation-Date: 2017-01-10 02:54+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -542,6 +542,10 @@ msgstr "up"
 #: dragonfly_grammars/i3.py:65 dragonfly_grammars/vim.py:60
 msgid "down"
 msgstr "down"
+
+#: dragonfly_grammars/password.py:21
+msgid "password <name> <passphrase>"
+msgstr "password <name> <passphrase>"
 
 #: dragonfly_grammars/vim.py:43
 msgid "(backward|left)"
