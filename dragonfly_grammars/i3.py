@@ -16,13 +16,19 @@ class OpenProcessRule(MappingRule):
     """Rules for opening process."""
 
     def __init__(self, *args, **kwargs):
-        self.mapping = {
-            _('open terminal'): Key('w-t'),
-            _('open process [<cmd>]'): Key('w-m,%(cmd)s')
-        }
+        self.spec = _('open process [<cmd>]')
         self.extras = [
             RuleRef(name='cmd', rule=Command())]
         MappingRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        cmd = 'w-m'
+        if node.has_child_with_name('cmd'):
+            cmd += ",{}".format(node.get_child_by_name('cmd'))
+        return cmd
+
+    def _process_recognition(self, node, extras):
+        Key(self.value(node)).execute()
 
 def n_to_key(n):
     """Convert number to workspace keysym."""
@@ -49,6 +55,7 @@ class WorkspaceRules(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
+            _('open terminal'): Key('w-t'),
             _('workspace <n>'): Function(go_to_workspace),
             _('move [to] workspace <n>'): Function(move_to_workspace),
             _('window <direction>'): Key('w-%(direction)s'),
