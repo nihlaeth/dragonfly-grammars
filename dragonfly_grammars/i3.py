@@ -28,13 +28,12 @@ class OpenProcessRule(CompoundRule):
 
     def value(self, node):
         cmd = 'w-m'
-        if node.has_child_with_name('cmd'):
+        if node.has_child_with_name('command'):
             cmd += ",{}".format(
-                node.get_child_by_name('cmd').value())
+                node.get_child_by_name('command').value())
         if node.has_child_with_name('ssh'):
             cmd += ",{}".format(text_to_keystr(
                 node.get_child_by_name('ssh').value()))
-        print cmd
         return cmd
 
     def _process_recognition(self, node, extras):
