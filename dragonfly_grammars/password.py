@@ -52,6 +52,12 @@ class PasswordRule(CompoundRule):
             return None
         return text_to_keystr(plaintext.decode('utf8'))
 
+    def _process_begin(self):
+        for name in self.language_path.iterdir():
+            name = string.replace(name.name, '_', ' ')
+            if name not in self.names:
+                self.names.append(name)
+
     def _process_recognition(self, node, extras):
         value = self.value(node)
         if value is None:
