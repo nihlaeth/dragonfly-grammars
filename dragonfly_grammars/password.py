@@ -41,7 +41,7 @@ class PasswordRule(CompoundRule):
         password_file = self.language_path.joinpath(name)
         if not password_file.exists():
             print "file does not exist, could not decrypt password"
-            return ""
+            return None
         passphrase = str(node.get_child_by_name(
             'passphrase').value()).strip().lower()
         crypt_text = password_file.read_bytes()
@@ -49,11 +49,14 @@ class PasswordRule(CompoundRule):
             plaintext = decrypt(passphrase, crypt_text)
         except DecryptionException:
             print "incorrect passphrase"
-            return ""
-        return text_to_keystr(plaintext)
+            return None
+        return text_to_keystr(plaintext.decode('utf8'))
 
     def _process_recognition(self, node, extras):
-        Key(self.value(node)).execute()
+        value = self.value(node)
+        if value is None:
+            return
+        Key(value).execute()
 
 
 GRAMMAR = None
