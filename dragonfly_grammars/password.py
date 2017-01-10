@@ -43,7 +43,7 @@ class PasswordRule(CompoundRule):
             print "file does not exist, could not decrypt password"
             return ""
         passphrase = str(node.get_child_by_name(
-            'passphrase').value().strip().lower())
+            'passphrase').value()).strip().lower()
         crypt_text = password_file.read_bytes()
         plaintext = decrypt(passphrase, crypt_text)
         if not plaintext.startswith("SUCC"):
