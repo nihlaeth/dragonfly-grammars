@@ -11,7 +11,6 @@ from aenea import (
     CompoundRule)
 from dragonfly_grammars.common import (
     _,
-    execute_keystr,
     extract_values,
     text_to_keystr)
 from dragonfly_grammars.context import terminal_not_vim
@@ -24,7 +23,7 @@ class SshOptions(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('[with] X forwarding'): '-Y'}
+            _('[with] X forwarding'): 'hyphen,s-y'}
         MappingRule.__init__(self, *args, **kwargs)
 
 class SshServer(CompoundRule):
@@ -67,7 +66,8 @@ class SshServer(CompoundRule):
         user = node.get_child_by_name('user', shallow=True)
         server = node.get_child_by_name('server', shallow=True)
         if user:
-            return "{}@{}".format(user.value(), server.value())
+            return text_to_keystr("{}@{}".format(
+                user.value(), server.value()))
         return server.value()
 
 
@@ -90,13 +90,13 @@ class SshRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return ' '.join(['ssh'] + extract_values(
+        return ',space,'.join(['s,s,h'] + extract_values(
             node,
             (SshOptions, SshServer, Command),
             recurse=True))
 
     def _process_recognition(self, node, extras):
-        execute_keystr(self.value(node))
+        Key(self.value(node)).execute()
 
 class SimpleCommand(MappingRule):
 
@@ -110,7 +110,7 @@ class SimpleCommand(MappingRule):
         MappingRule.__init__(self, *args, **kwargs)
 
     def _process_recognition(self, value, extras):
-        Key(value).execute()
+        Key(text_to_keystr(value)).execute()
 
 class Command(CompoundRule):
 
