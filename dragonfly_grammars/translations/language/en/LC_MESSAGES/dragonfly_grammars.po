@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-10 02:54+0100\n"
+"POT-Creation-Date: 2017-01-10 12:30+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -503,43 +503,43 @@ msgstr "go [<n>] page[s] down"
 msgid "dictate <text>"
 msgstr "dictate <text>"
 
-#: dragonfly_grammars/i3.py:20
-msgid "open terminal"
-msgstr "open terminal"
-
-#: dragonfly_grammars/i3.py:21
+#: dragonfly_grammars/i3.py:19
 msgid "open process [<cmd>]"
 msgstr "open process [<cmd>]"
 
-#: dragonfly_grammars/i3.py:52
+#: dragonfly_grammars/i3.py:58
+msgid "open terminal"
+msgstr "open terminal"
+
+#: dragonfly_grammars/i3.py:59
 msgid "workspace <n>"
 msgstr "workspace <n>"
 
-#: dragonfly_grammars/i3.py:53
+#: dragonfly_grammars/i3.py:60
 msgid "move [to] workspace <n>"
 msgstr "move [to] workspace <n>"
 
-#: dragonfly_grammars/i3.py:54
+#: dragonfly_grammars/i3.py:61
 msgid "window <direction>"
 msgstr "window <direction>"
 
-#: dragonfly_grammars/i3.py:55
+#: dragonfly_grammars/i3.py:62
 msgid "move window [to the] <direction>"
 msgstr "move window [to the] <direction>"
 
-#: dragonfly_grammars/i3.py:62
+#: dragonfly_grammars/i3.py:69
 msgid "left"
 msgstr "left"
 
-#: dragonfly_grammars/i3.py:63
+#: dragonfly_grammars/i3.py:70
 msgid "right"
 msgstr "right"
 
-#: dragonfly_grammars/i3.py:64 dragonfly_grammars/vim.py:59
+#: dragonfly_grammars/i3.py:71 dragonfly_grammars/vim.py:59
 msgid "up"
 msgstr "up"
 
-#: dragonfly_grammars/i3.py:65 dragonfly_grammars/vim.py:60
+#: dragonfly_grammars/i3.py:72 dragonfly_grammars/vim.py:60
 msgid "down"
 msgstr "down"
 
@@ -1309,20 +1309,20 @@ msgid "window equalise"
 msgstr "window equalise"
 
 #: dragonfly_grammars/vim.py:394
-msgid "window move left"
-msgstr "window move left"
+msgid "window move (H|hotel|left)"
+msgstr "window move (H|hotel|left)"
 
 #: dragonfly_grammars/vim.py:395
-msgid "window move down"
-msgstr "window move down"
+msgid "window move (J|juliet|down)"
+msgstr "window move (J|juliet|down)"
 
 #: dragonfly_grammars/vim.py:396
-msgid "window move up"
-msgstr "window move up"
+msgid "window move (K|kilo|up)"
+msgstr "window move (K|kilo|up)"
 
 #: dragonfly_grammars/vim.py:397
-msgid "window move right"
-msgstr "window move right"
+msgid "window move (L|Lima|right)"
+msgstr "window move (L|Lima|right)"
 
 #: dragonfly_grammars/vim.py:398
 msgid "window preview"
@@ -1381,24 +1381,24 @@ msgid "window tab edit file and jump"
 msgstr "window tab edit file and jump"
 
 #: dragonfly_grammars/vim.py:413
-msgid "window left"
-msgstr "window left"
+msgid "window (H|hotel|left)"
+msgstr "window (H|hotel|left)"
 
 #: dragonfly_grammars/vim.py:414
 msgid "window split and jump to declaration"
 msgstr "window split and jump to declaration"
 
 #: dragonfly_grammars/vim.py:415
-msgid "window down"
-msgstr "window down"
+msgid "window (J|juliet|down)"
+msgstr "window (J|juliet|down)"
 
 #: dragonfly_grammars/vim.py:416
-msgid "window up"
-msgstr "window up"
+msgid "window (K|kilo|up)"
+msgstr "window (K|kilo|up)"
 
 #: dragonfly_grammars/vim.py:417
-msgid "window right"
-msgstr "window right"
+msgid "window (L|lima|right)"
+msgstr "window (L|lima|right)"
 
 #: dragonfly_grammars/vim.py:418
 msgid "window new"
