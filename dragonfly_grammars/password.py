@@ -27,8 +27,7 @@ class PasswordRule(CompoundRule):
             natlinkstatus.NatlinkStatus().getLanguage())
         self.language_path.mkdir(exist_ok=True)
         for name in self.language_path.iterdir():
-            self.names.append(name.name.translate(
-                string.maketrans('_', ' ')))
+            self.names.append(string.replace(name.name, '_', ' '))
         self.extras = [
             ListRef(name='name', list=self.names),
             Dictation(name='passphrase'),
@@ -38,7 +37,7 @@ class PasswordRule(CompoundRule):
 
     def value(self, node):
         name = node.get_child_by_name('name').value()
-        name.translate(string.maketrans(' ', '_'))
+        name = string.replace(name, ' ', '_')
         password_file = self.language_path.joinpath(name)
         if not password_file.exists():
             print "file does not exist, could not decrypt password"
