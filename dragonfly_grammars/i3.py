@@ -9,7 +9,7 @@ from aenea import (
     Alternative,
     IntegerRef,
     RuleRef)
-from dragonfly_grammars.common import _, text_to_keystr
+from dragonfly_grammars.common import _
 from dragonfly_grammars.context import linux
 from dragonfly_grammars.cli import Command, SshRule
 
@@ -29,11 +29,11 @@ class OpenProcessRule(CompoundRule):
     def value(self, node):
         cmd = 'w-m'
         if node.has_child_with_name('cmd'):
-            cmd += ",{}".format(text_to_keystr(
-                node.get_child_by_name('cmd')))
+            cmd += ",{}".format(
+                node.get_child_by_name('cmd').value())
         if node.has_child_with_name('ssh'):
-            cmd += ",{}".format(text_to_keystr(
-                node.get_child_by_name('ssh')))
+            cmd += ",{}".format(
+                node.get_child_by_name('ssh').value())
         return cmd
 
     def _process_recognition(self, node, extras):
