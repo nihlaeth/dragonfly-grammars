@@ -27,7 +27,7 @@ class PasswordRule(CompoundRule):
             natlinkstatus.NatlinkStatus().getLanguage())
         self.language_path.mkdir(exist_ok=True)
         for name in self.language_path.iterdir():
-            self.names.append(name.translate(
+            self.names.append(name.name.translate(
                 string.maketrans('_', ' ')))
         self.extras = [
             ListRef(name='name', list=self.names),
