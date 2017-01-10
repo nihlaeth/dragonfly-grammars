@@ -68,7 +68,7 @@ class SshServer(CompoundRule):
         if user:
             return text_to_keystr("{}@{}".format(
                 user.value(), server.value()))
-        return server.value()
+        return text_to_keystr(server.value())
 
 
 class SshRule(CompoundRule):
