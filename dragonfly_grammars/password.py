@@ -36,7 +36,7 @@ class PasswordRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        name = node.get_child_by_name('name').value()
+        name = str(node.get_child_by_name('name').value())
         name = string.replace(name, ' ', '_')
         password_file = self.language_path.joinpath(name)
         if not password_file.exists():
