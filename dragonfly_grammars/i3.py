@@ -34,6 +34,7 @@ class OpenProcessRule(CompoundRule):
         if node.has_child_with_name('ssh'):
             cmd += ",{}".format(text_to_keystr(
                 node.get_child_by_name('ssh').value()))
+        print cmd
         return cmd
 
     def _process_recognition(self, node, extras):
