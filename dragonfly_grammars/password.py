@@ -37,14 +37,14 @@ class PasswordRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        name = node.get_child_by_name('name')
+        name = node.get_child_by_name('name').value()
         name.translate(string.maketrans(' ', '_'))
         password_file = self.language_path.joinpath(name)
         if not password_file.exists():
             print "file does not exist, could not decrypt password"
             return ""
         passphrase = node.get_child_by_name(
-            'passphrase').strip().lower()
+            'passphrase').value().strip().lower()
         crypt_text = password_file.read_bytes()
         plaintext = decrypt(passphrase, crypt_text)
         if not plaintext.startswith("SUCC"):
