@@ -7,7 +7,7 @@ Provide encrypted password storage.
 """
 import string
 from pathlib2 import Path
-from simplecrypt import decrypt
+from simplecrypt import decrypt, DecryptionException
 import natlinkstatus
 from aenea import Grammar, Key, CompoundRule, ListRef, Dictation
 from dragonfly import List
@@ -45,11 +45,11 @@ class PasswordRule(CompoundRule):
         passphrase = str(node.get_child_by_name(
             'passphrase').value()).strip().lower()
         crypt_text = password_file.read_bytes()
-        plaintext = decrypt(passphrase, crypt_text)
-        if not plaintext.startswith("SUCC"):
+        try:
+            plaintext = decrypt(passphrase, crypt_text)
+        except DecryptionException:
             print "incorrect passphrase"
             return ""
-        plaintext = plaintext[4:]
         return text_to_keystr(plaintext)
 
     def _process_recognition(self, node, extras):

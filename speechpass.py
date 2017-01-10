@@ -80,5 +80,5 @@ def encrypt_password():
     ################
     #  encryption  #
     ################
-    file_path.write_bytes(encrypt(passphrase, "SUCC" + secret))
+    file_path.write_bytes(encrypt(passphrase, secret))
     print "password encrypted and stored"
