@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-10 12:50+0100\n"
+"POT-Creation-Date: 2017-01-12 00:09+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -31,87 +31,87 @@ msgstr "enable proxy server"
 msgid "set proxy server to <proxy>"
 msgstr "set proxy server to <proxy>"
 
-#: dragonfly_grammars/cli.py:27
+#: dragonfly_grammars/cli.py:26
 msgid "[with] X forwarding"
 msgstr "[with] X forwarding"
 
-#: dragonfly_grammars/cli.py:37
+#: dragonfly_grammars/cli.py:36
 msgid "[<user> at] <server>"
 msgstr "[<user> at] <server>"
 
-#: dragonfly_grammars/cli.py:41
+#: dragonfly_grammars/cli.py:40
 msgid "me"
 msgstr "me"
 
-#: dragonfly_grammars/cli.py:45
+#: dragonfly_grammars/cli.py:44
 msgid "cerridwen"
 msgstr "cerridwen"
 
-#: dragonfly_grammars/cli.py:46
+#: dragonfly_grammars/cli.py:45
 msgid "yemanja"
 msgstr "yemanja"
 
-#: dragonfly_grammars/cli.py:47
+#: dragonfly_grammars/cli.py:46
 msgid "iris"
 msgstr "iris"
 
-#: dragonfly_grammars/cli.py:48
+#: dragonfly_grammars/cli.py:47
 msgid "aine"
 msgstr "aine"
 
-#: dragonfly_grammars/cli.py:49
+#: dragonfly_grammars/cli.py:48
 msgid "dayea"
 msgstr "dayea"
 
-#: dragonfly_grammars/cli.py:50
+#: dragonfly_grammars/cli.py:49
 msgid "brighid"
 msgstr "brighid"
 
-#: dragonfly_grammars/cli.py:51
+#: dragonfly_grammars/cli.py:50
 msgid "freya"
 msgstr "freya"
 
-#: dragonfly_grammars/cli.py:52
+#: dragonfly_grammars/cli.py:51
 msgid "arthemis"
 msgstr "arthemis"
 
-#: dragonfly_grammars/cli.py:53
+#: dragonfly_grammars/cli.py:52
 msgid "morrighan"
 msgstr "morrighan"
 
-#: dragonfly_grammars/cli.py:54
+#: dragonfly_grammars/cli.py:53
 msgid "epona"
 msgstr "epona"
 
-#: dragonfly_grammars/cli.py:55
+#: dragonfly_grammars/cli.py:54
 msgid "athena"
 msgstr "athena"
 
-#: dragonfly_grammars/cli.py:56 dragonfly_grammars/global_.py:95
+#: dragonfly_grammars/cli.py:55 dragonfly_grammars/global_.py:95
 msgid "echo"
 msgstr "echo"
 
-#: dragonfly_grammars/cli.py:57
+#: dragonfly_grammars/cli.py:56
 msgid "hera"
 msgstr "hera"
 
-#: dragonfly_grammars/cli.py:58
+#: dragonfly_grammars/cli.py:57
 msgid "hera boot"
 msgstr "hera boot"
 
-#: dragonfly_grammars/cli.py:59
+#: dragonfly_grammars/cli.py:58
 msgid "pele"
 msgstr "pele"
 
-#: dragonfly_grammars/cli.py:60
+#: dragonfly_grammars/cli.py:59
 msgid "eileen"
 msgstr "eileen"
 
-#: dragonfly_grammars/cli.py:61
+#: dragonfly_grammars/cli.py:60
 msgid "inanna"
 msgstr "inanna"
 
-#: dragonfly_grammars/cli.py:62
+#: dragonfly_grammars/cli.py:61
 msgid "anubis"
 msgstr "anubis"
 
@@ -503,43 +503,107 @@ msgstr "go [<n>] page[s] down"
 msgid "dictate <text>"
 msgstr "dictate <text>"
 
-#: dragonfly_grammars/i3.py:20
+#: dragonfly_grammars/i3.py:21
 msgid "open process [<cmd>]"
 msgstr "open process [<cmd>]"
 
-#: dragonfly_grammars/i3.py:59
+#: dragonfly_grammars/i3.py:67
 msgid "open terminal"
 msgstr "open terminal"
 
-#: dragonfly_grammars/i3.py:60
+#: dragonfly_grammars/i3.py:68
 msgid "workspace <n>"
 msgstr "workspace <n>"
 
-#: dragonfly_grammars/i3.py:61
+#: dragonfly_grammars/i3.py:69
 msgid "move [to] workspace <n>"
 msgstr "move [to] workspace <n>"
 
-#: dragonfly_grammars/i3.py:62
+#: dragonfly_grammars/i3.py:70
 msgid "window <direction>"
 msgstr "window <direction>"
 
-#: dragonfly_grammars/i3.py:63
+#: dragonfly_grammars/i3.py:71
 msgid "move window [to the] <direction>"
 msgstr "move window [to the] <direction>"
 
-#: dragonfly_grammars/i3.py:70
+#: dragonfly_grammars/i3.py:72
+msgid "fullscreen"
+msgstr "fullscreen"
+
+#: dragonfly_grammars/i3.py:73
+msgid "tabbed layout"
+msgstr "tabbed layout"
+
+#: dragonfly_grammars/i3.py:74
+msgid "tiling layout"
+msgstr "tiling layout"
+
+#: dragonfly_grammars/i3.py:75
+msgid "stacking layout"
+msgstr "stacking layout"
+
+#: dragonfly_grammars/i3.py:76
+msgid "kill focused window"
+msgstr "kill focused window"
+
+#: dragonfly_grammars/i3.py:77
+msgid "horizontal split"
+msgstr "horizontal split"
+
+#: dragonfly_grammars/i3.py:78
+msgid "vertical split"
+msgstr "vertical split"
+
+#: dragonfly_grammars/i3.py:79
+msgid "toggle floating"
+msgstr "toggle floating"
+
+#: dragonfly_grammars/i3.py:80
+msgid "focus floating"
+msgstr "focus floating"
+
+#: dragonfly_grammars/i3.py:81
+msgid "reload i3 config file"
+msgstr "reload i3 config file"
+
+#: dragonfly_grammars/i3.py:82
+msgid "restart i3 in place"
+msgstr "restart i3 in place"
+
+#: dragonfly_grammars/i3.py:83
+msgid "I'm really sure I want to exit i3"
+msgstr "I'm really sure I want to exit i3"
+
+#: dragonfly_grammars/i3.py:84
+msgid "resize mode"
+msgstr "resize mode"
+
+#: dragonfly_grammars/i3.py:85
+msgid "invert screen rotation"
+msgstr "invert screen rotation"
+
+#: dragonfly_grammars/i3.py:86
+msgid "reset screen rotation"
+msgstr "reset screen rotation"
+
+#: dragonfly_grammars/i3.py:87
+msgid "(display|show) window info"
+msgstr "(display|show) window info"
+
+#: dragonfly_grammars/i3.py:94
 msgid "left"
 msgstr "left"
 
-#: dragonfly_grammars/i3.py:71
+#: dragonfly_grammars/i3.py:95
 msgid "right"
 msgstr "right"
 
-#: dragonfly_grammars/i3.py:72 dragonfly_grammars/vim.py:59
+#: dragonfly_grammars/i3.py:96 dragonfly_grammars/vim.py:59
 msgid "up"
 msgstr "up"
 
-#: dragonfly_grammars/i3.py:73 dragonfly_grammars/vim.py:60
+#: dragonfly_grammars/i3.py:97 dragonfly_grammars/vim.py:60
 msgid "down"
 msgstr "down"
 
