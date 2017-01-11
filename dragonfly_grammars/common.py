@@ -70,6 +70,18 @@ def text_to_keystr(text):
     return ','.join(
         [charnames[character] for character in str(text)])
 
+class Text(Key):
+
+    """
+    Text object that works with any Xdo version.
+    """
+
+    def _parse_spec(self, spec):
+        Key._parse_spec(
+            self,
+            text_to_keystr(spec))
+
+
 def execute_keystr(text):
     """Type out text."""
     Key(text_to_keystr(text)).execute()
