@@ -498,11 +498,12 @@ class TrueVimNormalRepetitionRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return sum(extract_values(node, (
-            TrueVimNormalRule), recurse=True))
+        extras = extract_values(node, (
+            TrueVimNormalRule), recurse=True)
+        print extras
+        return sum(extras)
 
     def _process_recognition(self, node, extras):
-        print self.value(node)
         self.value(node).execute()
 
 
