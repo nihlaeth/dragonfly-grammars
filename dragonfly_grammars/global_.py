@@ -112,7 +112,7 @@ class LowercaseCharacter(MappingRule):
             _('whiskey'): Key('w'),
             _('x-ray'): Key('x'),
             _('yankee'): Key('y'),
-            _('zulu'): 'z'}
+            _('zulu'): Key('z')}
         for char in string.uppercase:
             self.mapping[char] = char.lower()
         MappingRule.__init__(self, *args, **kwargs)
