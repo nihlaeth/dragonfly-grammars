@@ -76,7 +76,7 @@ class Text(aenea.Text):
     """Text object that works with any Xdo version."""
 
     def _execute_events(self, events):
-        return Key(text_to_keystr(events)).execute()
+        return Key(text_to_keystr(events[0])).execute()
 
 def join_actions(joiner, values):
     """

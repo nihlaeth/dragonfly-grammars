@@ -35,7 +35,7 @@ class OpenProcessRule(CompoundRule):
         return cmd
 
     def _process_recognition(self, node, extras):
-        Key(self.value(node)).execute()
+        self.value(node).execute()
 
 def n_to_key(n):
     """Convert number to workspace keysym."""
