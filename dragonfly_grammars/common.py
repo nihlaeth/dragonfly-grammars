@@ -1,5 +1,6 @@
 """Common values and functions for dragonfly_grammars."""
 import string
+import aenea
 from aenea import Key
 
 _GETTEXT_FUNC = lambda text: text
@@ -70,11 +71,12 @@ def text_to_keystr(text):
     return ','.join(
         [charnames[character] for character in str(text)])
 
-# pylint: disable=invalid-name
-# if it walks like a duck and talks like a duck...
-def Text(text):
+class Text(aenea.Text):
+
     """Text object that works with any Xdo version."""
-    return Key(text_to_keystr(text))
+
+    def _execute_events(self, events):
+        return Key(text_to_keystr(events)).execute()
 
 def join_actions(joiner, values):
     """
