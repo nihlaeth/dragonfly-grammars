@@ -109,6 +109,32 @@ def join_actions(joiner, values):
         result += value
     return result
 
+def sum_actions(actions):
+    """
+    Sum actions.
+
+    Parameters
+    ----------
+    actions: List[dragonfly.DynStrActionBase],
+        actions to be summed
+
+    Raises
+    ------
+    None
+
+    Returns
+    -------
+    dragonfly.DynStrActionBase
+    """
+    if len(actions) == 0:
+        return None
+    elif len(actions) == 1:
+        return actions[0]
+    result = actions[0]
+    for action in actions[1:]:
+        result += action
+    return result
+
 def execute_keystr(text):
     """Type out text."""
     Key(text_to_keystr(text)).execute()

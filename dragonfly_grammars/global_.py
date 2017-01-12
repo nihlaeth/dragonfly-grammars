@@ -10,7 +10,11 @@ from aenea import (
     Repetition,
     IntegerRef,
     Dictation)
-from dragonfly_grammars.common import _, extract_values, Text
+from dragonfly_grammars.common import (
+    _,
+    extract_values,
+    Text,
+    sum_actions)
 
 class Symbol(MappingRule):
 
@@ -173,7 +177,7 @@ class SpellingRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return sum(extract_values(
+        return sum_actions(extract_values(
             node, AnyCharacter, recurse=True))
 
     def _process_recognition(self, node, extras):

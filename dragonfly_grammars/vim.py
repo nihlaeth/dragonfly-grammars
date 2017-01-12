@@ -20,6 +20,7 @@ from aenea import (
     Alternative,
     Repetition,
     Key)
+from dragonfly_grammars.common import sum_actions
 
 from dragonfly_grammars.common import _, extract_values
 from dragonfly_grammars.context import vim_normal_mode
@@ -270,7 +271,7 @@ class MotionOperatorRule(CompoundRule):
                 node.get_child_by_name(
                     'operatormotion').value())
 
-        return sum(cmd_elements)
+        return sum_actions(cmd_elements)
 
     def _process_recognition(self, node, extras):
         self.value(node).execute()
@@ -501,7 +502,7 @@ class TrueVimNormalRepetitionRule(CompoundRule):
         extras = extract_values(node, (
             TrueVimNormalRule), recurse=True)
         print extras
-        return sum(extras)
+        return sum_actions(extras)
 
     def _process_recognition(self, node, extras):
         self.value(node).execute()
