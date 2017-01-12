@@ -70,16 +70,11 @@ def text_to_keystr(text):
     return ','.join(
         [charnames[character] for character in str(text)])
 
-class Text(Key):
-
-    """
-    Text object that works with any Xdo version.
-    """
-
-    def _parse_spec(self, spec):
-        Key._parse_spec(
-            self,
-            text_to_keystr(spec))
+# pylint: disable=invalid-name
+# if it walks like a duck and talks like a duck...
+def Text(text):
+    """Text object that works with any Xdo version."""
+    return Key(text_to_keystr(text))
 
 def join_actions(joiner, values):
     """
