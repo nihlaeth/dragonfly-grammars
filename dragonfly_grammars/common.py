@@ -81,6 +81,36 @@ class Text(Key):
             self,
             text_to_keystr(spec))
 
+def join_actions(joiner, values):
+    """
+    Join Action objects with a text.
+
+    Useful for multipart rules.
+
+    Parameters
+    ----------
+    joiner: str
+        text to be typed in between parts
+    values: List[dragonfly.DynStrActionBase]
+        list of actions to be joined with joiner
+
+    Raises
+    ------
+    None
+
+    Returns
+    -------
+    dragonfly.DynStrActionBase
+    """
+    if len(values) == 0:
+        return
+    elif len(values) == 1:
+        return values[0]
+    result = values[0]
+    for value in values[1:]:
+        result += Text(joiner)
+        result += value
+    return result
 
 def execute_keystr(text):
     """Type out text."""

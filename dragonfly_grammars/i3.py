@@ -27,13 +27,11 @@ class OpenProcessRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        cmd = 'w-m'
+        cmd = Key('w-m')
         if node.has_child_with_name('ssh'):
-            cmd += ",{}".format(
-                node.get_child_by_name('ssh').value())
+            cmd += node.get_child_by_name('ssh').value()
         elif node.has_child_with_name('command'):
-            cmd += ",{}".format(
-                node.get_child_by_name('command').value())
+            cmd += node.get_child_by_name('command').value()
         return cmd
 
     def _process_recognition(self, node, extras):

@@ -12,7 +12,9 @@ from aenea import (
 from dragonfly_grammars.common import (
     _,
     extract_values,
-    text_to_keystr)
+    text_to_keystr,
+    join_actions,
+    Text)
 from dragonfly_grammars.context import terminal_not_vim
 
 class SshOptions(MappingRule):
@@ -23,7 +25,7 @@ class SshOptions(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('[with] X forwarding'): 'hyphen,s-y'}
+            _('[with] X forwarding'): Text('-Y')}
         MappingRule.__init__(self, *args, **kwargs)
 
 class SshServer(CompoundRule):
@@ -66,9 +68,9 @@ class SshServer(CompoundRule):
         user = node.get_child_by_name('user', shallow=True)
         server = node.get_child_by_name('server', shallow=True)
         if user:
-            return text_to_keystr("{}@{}".format(
+            return Text("{}@{}".format(
                 user.value(), server.value()))
-        return text_to_keystr(server.value())
+        return Text(server.value())
 
 
 class SshRule(CompoundRule):
@@ -90,13 +92,13 @@ class SshRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return ',space,'.join(['s,s,h'] + extract_values(
+        return join_actions(' ', [Text('ssh')] + extract_values(
             node,
             (SshOptions, SshServer, Command),
             recurse=True))
 
     def _process_recognition(self, node, extras):
-        Key(self.value(node)).execute()
+        self.value(node).execute()
 
 class SimpleCommand(MappingRule):
 
@@ -104,13 +106,10 @@ class SimpleCommand(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('firefox'): 'firefox',
-            _('print working directory'): 'pwd',
-            _('password gorilla'): 'passwordgorilla'}
+            _('firefox'): Text('firefox'),
+            _('print working directory'): Text('pwd'),
+            _('password gorilla'): Text('passwordgorilla')}
         MappingRule.__init__(self, *args, **kwargs)
-
-    def _process_recognition(self, value, extras):
-        Key(text_to_keystr(value)).execute()
 
 class Command(CompoundRule):
 
@@ -125,8 +124,8 @@ class Command(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return text_to_keystr(extract_values(node, (
-            SimpleCommand), recurse=True)[0])
+        return extract_values(node, (
+            SimpleCommand), recurse=True)[0]
 
 
 GRAMMAR = None

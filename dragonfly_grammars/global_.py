@@ -8,10 +8,9 @@ from aenea import (
     RuleRef,
     Alternative,
     Repetition,
-    Function,
     IntegerRef,
     Dictation)
-from dragonfly_grammars.common import _, execute_keystr, extract_values
+from dragonfly_grammars.common import _, extract_values, Text
 
 class Symbol(MappingRule):
 
@@ -21,41 +20,41 @@ class Symbol(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('(left|open) angle [bracket]'): 'langle',
-            _('(left|open) [curly] brace'): 'lbrace',
-            _('(left|open) [square] bracket'): 'lbracket',
-            _('(left|open) paren'): 'lparen',
-            _('(right|close) angle [bracket]'): 'rangle',
-            _('(right|close) [curly] brace'): 'rbrace',
-            _('(right|close) [square] bracket'): 'rbracket',
-            _('(right|close) paren'): 'rparen',
-            _('(ampersand|and)'): 'ampersand',
-            _('apostrophe'): 'apostrophe',
-            _('asterisk'): 'asterisk',
-            _('at'): 'at',
-            _('backslash'): 'backslash',
-            _('backtick'): 'backtick',
-            _('[vertical] bar'): 'bar',
-            _('caret'): 'caret',
-            _('colon'): 'colon',
-            _('comma'): 'comma',
-            _('dollar [sign]'): 'dollar',
-            _('(dot|period|full stop)'): 'dot',
-            _('double quote'): 'dquote',
-            _('equal[s]'): 'equal',
-            _('exclamation [point]'): 'exclamation',
-            _('hash'): 'hash',
-            _('hyphen'): 'hyphen',
-            _('percent [sign]'): 'percent',
-            _('plus [sign]'): 'plus',
-            _('question[mark]'): 'question',
-            _('semicolon'): 'semicolon',
-            _('slash'): 'slash',
-            _('tilde'): 'tilde',
-            _('underscore'): 'underscore',
-            _('space'): 'space',
-            _('(enter|newline)'): 'enter',
-            _('tab [key]'): 'tab',
+            _('(left|open) angle [bracket]'): Key('langle'),
+            _('(left|open) [curly] brace'): Key('lbrace'),
+            _('(left|open) [square] bracket'): Key('lbracket'),
+            _('(left|open) paren'): Key('lparen'),
+            _('(right|close) angle [bracket]'): Key('rangle'),
+            _('(right|close) [curly] brace'): Key('rbrace'),
+            _('(right|close) [square] bracket'): Key('rbracket'),
+            _('(right|close) paren'): Key('rparen'),
+            _('(ampersand|and)'): Key('ampersand'),
+            _('apostrophe'): Key('apostrophe'),
+            _('asterisk'): Key('asterisk'),
+            _('at'): Key('at'),
+            _('backslash'): Key('backslash'),
+            _('backtick'): Key('backtick'),
+            _('[vertical] bar'): Key('bar'),
+            _('caret'): Key('caret'),
+            _('colon'): Key('colon'),
+            _('comma'): Key('comma'),
+            _('dollar [sign]'): Key('dollar'),
+            _('(dot|period|full stop)'): Key('dot'),
+            _('double quote'): Key('dquote'),
+            _('equal[s]'): Key('equal'),
+            _('exclamation [point]'): Key('exclamation'),
+            _('hash'): Key('hash'),
+            _('hyphen'): Key('hyphen'),
+            _('percent [sign]'): Key('percent'),
+            _('plus [sign]'): Key('plus'),
+            _('question[mark]'): Key('question'),
+            _('semicolon'): Key('semicolon'),
+            _('slash'): Key('slash'),
+            _('tilde'): Key('tilde'),
+            _('underscore'): Key('underscore'),
+            _('space'): Key('space'),
+            _('(enter|newline)'): Key('enter'),
+            _('tab [key]'): Key('tab'),
         }
         MappingRule.__init__(self, *args, **kwargs)
 
@@ -67,16 +66,16 @@ class Number(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('zero'): '0',
-            _('one'): '1',
-            _('two'): '2',
-            _('three'): '3',
-            _('four'): '4',
-            _('five'): '5',
-            _('six'): '6',
-            _('seven'): '7',
-            _('eight'): '8',
-            _('nine'): '9',
+            _('zero'): Key('0'),
+            _('one'): Key('1'),
+            _('two'): Key('2'),
+            _('three'): Key('3'),
+            _('four'): Key('4'),
+            _('five'): Key('5'),
+            _('six'): Key('6'),
+            _('seven'): Key('7'),
+            _('eight'): Key('8'),
+            _('nine'): Key('9'),
         }
         MappingRule.__init__(self, *args, **kwargs)
 
@@ -88,31 +87,31 @@ class LowercaseCharacter(MappingRule):
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
-            _('alpha'): 'a',
-            _('bravo'): 'b',
-            _('charlie'): 'c',
-            _('delta'): 'd',
-            _('echo'): 'e',
-            _('foxtrot'): 'f',
-            _('golf'): 'g',
-            _('hotel'): 'h',
-            _('india'): 'i',
-            _('juliet'): 'j',
-            _('kilo'): 'k',
-            _('lima'): 'l',
-            _('mike'): 'm',
-            _('november'): 'n',
-            _('oscar'): 'o',
-            _('papa'): 'p',
-            _('quebec'): 'q',
-            _('romeo'): 'r',
-            _('sierra'): 's',
-            _('tango'): 't',
-            _('uniform'): 'u',
-            _('victor'): 'v',
-            _('whiskey'): 'w',
-            _('x-ray'): 'x',
-            _('yankee'): 'y',
+            _('alpha'): Key('a'),
+            _('bravo'): Key('b'),
+            _('charlie'): Key('c'),
+            _('delta'): Key('d'),
+            _('echo'): Key('e'),
+            _('foxtrot'): Key('f'),
+            _('golf'): Key('g'),
+            _('hotel'): Key('h'),
+            _('india'): Key('i'),
+            _('juliet'): Key('j'),
+            _('kilo'): Key('k'),
+            _('lima'): Key('l'),
+            _('mike'): Key('m'),
+            _('november'): Key('n'),
+            _('oscar'): Key('o'),
+            _('papa'): Key('p'),
+            _('quebec'): Key('q'),
+            _('romeo'): Key('r'),
+            _('sierra'): Key('s'),
+            _('tango'): Key('t'),
+            _('uniform'): Key('u'),
+            _('victor'): Key('v'),
+            _('whiskey'): Key('w'),
+            _('x-ray'): Key('x'),
+            _('yankee'): Key('y'),
             _('zulu'): 'z'}
         for char in string.uppercase:
             self.mapping[char] = char.lower()
@@ -174,15 +173,16 @@ class SpellingRule(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return ','.join(extract_values(
+        return sum(extract_values(
             node, AnyCharacter, recurse=True))
 
     def _process_recognition(self, node, extras):
-        Key(self.value(node)).execute()
+        self.value(node).execute()
 
 class Modifier(MappingRule):
 
     """Modifier keys."""
+    # TODO: return action objects instead of plain strings
 
     exported = False
 
@@ -215,10 +215,10 @@ class PressRule(CompoundRule):
         mods = extract_values(node, Modifier, recurse=True)
         if len(mods) == 0:
             return char
-        return "{}-{}".format("".join(mods), char)
+        return Key("{}-{}".format("".join(mods), str(char)))
 
     def _process_recognition(self, node, extras):
-        Key(self.value(node)).execute()
+        self.value(node).execute()
 
 class BasicKeyboardRule(MappingRule):
 
@@ -241,7 +241,7 @@ class BasicKeyboardRule(MappingRule):
         _('go [<n>] page[s] up'): Key('pgup:%(n)d'),
         _('go [<n>] page[s] down'): Key('pgdown:%(n)d'),
 
-        _('dictate <text>'): Function(execute_keystr),
+        _('dictate <text>'): Text('%(text)s'),
     }
     extras = [Dictation('text'), IntegerRef('n', 1, 100)]
     defaults = {
