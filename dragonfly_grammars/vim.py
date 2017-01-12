@@ -108,7 +108,7 @@ class MotionRule(MappingRule):
             _("restore position"): Key("apostrophe,apostrophe"),
             _("restore position at last buffer exit"): Key("apostrophe,dquote"),
             _("restore position at last insert"): Key("apostrophe,caret"),
-            _("restore position at last change"): Key("apostrophe,period"),
+            _("restore position at last change"): Key("apostrophe,dot"),
             _("first non-blank char[acater] of next lowercase mark"): Key("rbracket,apostrophe"),
             _("next lowercase mark"): Key("rbracket,backtick"),
             _("first non-blank char[acter] of previous lowercase mark"): Key("lbracket,apostrophe"),
