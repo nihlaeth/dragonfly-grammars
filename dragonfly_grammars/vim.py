@@ -368,8 +368,8 @@ class VimNormalRule(MappingRule):
             _("paste"): Key("p"),
             _("paste before"): Key("s-p"),
             _("register <register>"): Key("dquote,%(register)s"),
-            _("diff get"): Key("do"),
-            _("diff put"): Key("dp"),
+            _("diff get"): Key("d,o"),
+            _("diff put"): Key("d,p"),
             ############
             #  search  #
             ############
