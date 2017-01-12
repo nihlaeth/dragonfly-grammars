@@ -502,6 +502,7 @@ class TrueVimNormalRepetitionRule(CompoundRule):
             TrueVimNormalRule), recurse=True))
 
     def _process_recognition(self, node, extras):
+        print self.value(node)
         self.value(node).execute()
 
 
