@@ -501,7 +501,6 @@ class TrueVimNormalRepetitionRule(CompoundRule):
     def value(self, node):
         extras = extract_values(node, (
             TrueVimNormalRule), recurse=True)
-        print extras
         return sum_actions(extras)
 
     def _process_recognition(self, node, extras):
