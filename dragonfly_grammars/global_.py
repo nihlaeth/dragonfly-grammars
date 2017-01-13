@@ -119,7 +119,7 @@ class LowercaseCharacter(MappingRule):
             _('yankee'): Key('y'),
             _('zulu'): Key('z')}
         for char in string.uppercase:
-            self.mapping[char] = char.lower()
+            self.mapping[char] = Key(char.lower())
         MappingRule.__init__(self, *args, **kwargs)
 
 class UppercaseCharacter(CompoundRule):
@@ -136,8 +136,8 @@ class UppercaseCharacter(CompoundRule):
         CompoundRule.__init__(self, *args, **kwargs)
 
     def value(self, node):
-        return 's-{}'.format(extract_values(
-            node, LowercaseCharacter, recurse=True)[0])
+        return Key('s-{}'.format(str(extract_values(
+            node, LowercaseCharacter, recurse=True)[0])))
 
 class AnyCharacter(CompoundRule):
 
@@ -184,21 +184,6 @@ class SpellingRule(CompoundRule):
     def _process_recognition(self, node, extras):
         self.value(node).execute()
 
-class Modifier(MappingRule):
-
-    """Modifier keys."""
-    # TODO: return action objects instead of plain strings
-
-    exported = False
-
-    def __init__(self, *args, **kwargs):
-        self.mapping = {
-            _('control'): 'c',
-            _('shift'): 's',
-            _('alt'): 'a',
-            _('(command|super)'): 'w'}
-        MappingRule.__init__(self, *args, **kwargs)
-
 class PressRule(CompoundRule):
 
     """Press keycombos."""
@@ -209,7 +194,12 @@ class PressRule(CompoundRule):
         self.extras = [
             Repetition(
                 name='modifiers',
-                child=RuleRef(rule=Modifier()),
+                child=Choice(name='modifier', choices={
+                    _('control'): 'c',
+                    _('shift'): 's',
+                    _('alt'): 'a',
+                    _('(command|super)'): 'w',
+                    }),
                 min=0,
                 max=4),
             RuleRef(name='character', rule=AnyCharacter())]
@@ -217,7 +207,8 @@ class PressRule(CompoundRule):
 
     def value(self, node):
         char = extract_values(node, AnyCharacter, recurse=True)[0]
-        mods = extract_values(node, Modifier, recurse=True)
+        mods = [mod.value() for mod in \
+                node.get_children_by_name('modifier')]
         if len(mods) == 0:
             return char
         return Key("{}-{}".format("".join(mods), str(char)))
