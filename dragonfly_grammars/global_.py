@@ -211,6 +211,7 @@ class PressRule(CompoundRule):
                 node.get_children_by_name('modifier')]
         if len(mods) == 0:
             return char
+        print "{}-{}".format("".join(mods), str(char))
         return Key("{}-{}".format("".join(mods), str(char)))
 
     def _process_recognition(self, node, extras):
