@@ -246,6 +246,8 @@ class DictationRule(CompoundRule):
 
     """Different formattings of dictated text."""
 
+    default_formatting = 'snake'
+
     def __init__(
             self,
             name=None,
