@@ -137,7 +137,7 @@ class UppercaseCharacter(CompoundRule):
 
     def value(self, node):
         return Key('s-{}'.format(str(extract_values(
-            node, LowercaseCharacter, recurse=True)[0])))
+            node, LowercaseCharacter, recurse=True)[0]._action)))
 
 class AnyCharacter(CompoundRule):
 
@@ -211,9 +211,7 @@ class PressRule(CompoundRule):
                 node.get_children_by_name('modifier')]
         if len(mods) == 0:
             return char
-        print mods
-        print "{}-{}".format("".join(mods), str(char))
-        return Key("{}-{}".format("".join(mods), str(char)))
+        return Key("{}-{}".format("".join(mods), str(char._action)))
 
     def _process_recognition(self, node, extras):
         self.value(node).execute()
