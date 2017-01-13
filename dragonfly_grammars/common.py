@@ -1,7 +1,6 @@
 """Common values and functions for dragonfly_grammars."""
 import string
 import aenea
-from aenea import Key
 
 _GETTEXT_FUNC = lambda text: text
 # pylint: disable=unnecessary-lambda
@@ -77,6 +76,16 @@ class Text(aenea.Text):
 
     def _execute_events(self, events):
         return Key(text_to_keystr(events[0])).execute()
+
+    def __str__(self):
+        return self._spec
+
+class Key(aenea.Key):
+
+    """Key with useful str method."""
+
+    def __str__(self):
+        return self._spec
 
 def join_actions(joiner, values):
     """

@@ -3,7 +3,6 @@ import string
 from aenea import (
     Grammar,
     MappingRule,
-    Key,
     CompoundRule,
     RuleRef,
     Alternative,
@@ -15,6 +14,7 @@ from dragonfly_grammars.common import (
     _,
     extract_values,
     Text,
+    Key,
     sum_actions)
 
 class Symbol(MappingRule):
