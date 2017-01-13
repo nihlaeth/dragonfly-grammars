@@ -211,6 +211,7 @@ class PressRule(CompoundRule):
                 node.get_children_by_name('modifier')]
         if len(mods) == 0:
             return char
+        print mods
         print "{}-{}".format("".join(mods), str(char))
         return Key("{}-{}".format("".join(mods), str(char)))
 
@@ -322,7 +323,7 @@ class DictationRule(CompoundRule):
             formatted_tokens.extend(words)
             formatted_tokens[0].capitalize()
         elif formatting == 'raw':
-            pass
+            formatted_tokens.extend(words)
         else:
             print "unknown formatting: %s" % formatting
 
