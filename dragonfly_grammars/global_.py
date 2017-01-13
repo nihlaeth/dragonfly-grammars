@@ -288,8 +288,10 @@ class DictationRule(CompoundRule):
     def value(self, node):
         formatting = self.default_formatting
         if node.has_child_with_name('formatting'):
-            formatting = node.get_child_by_name('formatting').value()
-        raw_dictation = node.get_child_by_name('dictation').value()
+            formatting = node.get_child_by_name(
+                'formatting').value()
+        raw_dictation = str(node.get_child_by_name(
+            'dictation').value())
         joiner = ' '
         words = raw_dictation.split(' ')
         formatted_tokens = []
