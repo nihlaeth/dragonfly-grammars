@@ -7,6 +7,7 @@ from aenea import (
     CompoundRule,
     RuleRef,
     Alternative,
+    Choice,
     Repetition,
     IntegerRef,
     Dictation)
@@ -244,13 +245,95 @@ class BasicKeyboardRule(MappingRule):
         _('go [to] end'): Key('end'),
         _('go [<n>] page[s] up'): Key('pgup:%(n)d'),
         _('go [<n>] page[s] down'): Key('pgdown:%(n)d'),
-
-        _('dictate <text>'): Text('%(text)s'),
     }
     extras = [Dictation('text'), IntegerRef('n', 1, 100)]
     defaults = {
         "n": 1
     }
+
+class DictationRule(CompoundRule):
+
+    """Different formattings of dictated text."""
+
+    def __init__(
+            self,
+            name=None,
+            spec=None,
+            extras=None,
+            defaults=None,
+            exported=False,
+            context=None,
+            default_formatting='snake'):
+        if exported is not None:
+            self.exported = exported
+        if self.exported:
+            self.spec = "<formatting> <dictation>"
+        else:
+            self.default_formatting = default_formatting
+            self.spec = "[<formatting>] <dictation>"
+        self.extras = [
+            Choice(name='formatting', choices={
+                _("snake [case]"): "snake",  # snake_case
+                _("camel [case]"): "camel",  # CamelCase
+                _("mixed [case]"): "mixed",  # mixedCase
+                _("upper[case]"): "upper",  # UPPERCASE_STUFF
+                _("no case"): "nocase",  # lowercase text
+                _("sentence"): "sentence",  # Cap first letter
+                _("dictate"): "raw",  # raw dictation
+                }),
+            Dictation(name='dictation'),
+            ]
+        CompoundRule.__init__(
+            self,
+            name=name,
+            spec=spec,
+            extras=extras,
+            defaults=defaults,
+            exported=exported,
+            context=context)
+
+    def value(self, node):
+        formatting = self.default_formatting
+        if node.has_child_with_name('formatting'):
+            formatting = node.get_child_by_name('formatting').value()
+        raw_dictation = node.get_child_by_name('dictation').value()
+        joiner = ' '
+        words = raw_dictation.split(' ')
+        formatted_tokens = []
+        if formatting == 'snake':
+            joiner = '_'
+            for word in words:
+                formatted_tokens.append(word.lower())
+        elif formatting == 'camel':
+            joiner = ''
+            for word in words:
+                formatted_tokens.append(word.lower().capitalize())
+        elif formatting == 'mixed':
+            joiner = ''
+            formatted_tokens.append(words[0].lower())
+            if len(words) > 1:
+                for word in words[1:]:
+                    formatted_tokens.append(word.lower().capitalize())
+        elif formatting == 'upper':
+            joiner = '_'
+            for word in words:
+                formatted_tokens.append(word.upper())
+        elif formatting == 'nocase':
+            for word in words:
+                formatted_tokens.append(word.lower())
+        elif formatting == 'sentence':
+            joiner = ' '
+            formatted_tokens.extend(words)
+            formatted_tokens[0].capitalize()
+        elif formatting == 'raw':
+            pass
+        else:
+            print "unknown formatting: %s" % formatting
+
+        return Text(joiner.join(formatted_tokens))
+
+    def _process_recognition(self, node, extras):
+        self.value(node).execute()
 
 GRAMMAR = None
 
@@ -261,6 +344,7 @@ def load():
     GRAMMAR.add_rule(BasicKeyboardRule())
     GRAMMAR.add_rule(SpellingRule())
     GRAMMAR.add_rule(PressRule())
+    GRAMMAR.add_rule(DictationRule(exported=True))
     GRAMMAR.load()
 
     print 'global grammar: Loaded.'
