@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonfly_grammars 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-13 21:04+0100\n"
+"POT-Creation-Date: 2017-01-13 22:59+0100\n"
 "PO-Revision-Date: 2016-12-19 11:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -119,19 +119,219 @@ msgstr "anubis"
 msgid "S S H [<ssh_options>] <server> [<command>]"
 msgstr "ssh [<ssh_options>] <server> [<command>]"
 
-#: dragonfly_grammars/cli.py:109
+#: dragonfly_grammars/cli.py:110
+msgid "sudo <command>"
+msgstr "sudo <command>"
+
+#: dragonfly_grammars/cli.py:129
+msgid "swich user"
+msgstr "swich user"
+
+#: dragonfly_grammars/cli.py:130
+msgid "change directory"
+msgstr "change directory"
+
+#: dragonfly_grammars/cli.py:131
+msgid "foreground"
+msgstr "foreground"
+
+#: dragonfly_grammars/cli.py:132
+msgid "list"
+msgstr "list"
+
+#: dragonfly_grammars/cli.py:133
+msgid "list all"
+msgstr "list all"
+
+#: dragonfly_grammars/cli.py:134
+msgid "remove"
+msgstr "remove"
+
+#: dragonfly_grammars/cli.py:135
+msgid "remove directory"
+msgstr "remove directory"
+
+#: dragonfly_grammars/cli.py:136
+msgid "make directory"
+msgstr "make directory"
+
+#: dragonfly_grammars/cli.py:137
+msgid "move"
+msgstr "move"
+
+#: dragonfly_grammars/cli.py:138
+msgid "link"
+msgstr "link"
+
+#: dragonfly_grammars/cli.py:139
+msgid "screen"
+msgstr "screen"
+
+#: dragonfly_grammars/cli.py:140
+msgid "attach screen"
+msgstr "attach screen"
+
+#: dragonfly_grammars/cli.py:141
+msgid "disk usage"
+msgstr "disk usage"
+
+#: dragonfly_grammars/cli.py:142
+msgid "disc find"
+msgstr "disc find"
+
+#: dragonfly_grammars/cli.py:143
+msgid "service"
+msgstr "service"
+
+#: dragonfly_grammars/cli.py:144
+msgid "process grep"
+msgstr "process grep"
+
+#: dragonfly_grammars/cli.py:145
+msgid "process kill"
+msgstr "process kill"
+
+#: dragonfly_grammars/cli.py:146
+msgid "grep"
+msgstr "grep"
+
+#: dragonfly_grammars/cli.py:147
+msgid "web get"
+msgstr "web get"
+
+#: dragonfly_grammars/cli.py:148
+msgid "secure copy"
+msgstr "secure copy"
+
+#: dragonfly_grammars/cli.py:149
+msgid "secure copy directory"
+msgstr "secure copy directory"
+
+#: dragonfly_grammars/cli.py:150
+msgid "copy"
+msgstr "copy"
+
+#: dragonfly_grammars/cli.py:151
+msgid "copy directory"
+msgstr "copy directory"
+
+#: dragonfly_grammars/cli.py:152
+msgid "(edit|vim)"
+msgstr "(edit|vim)"
+
+#: dragonfly_grammars/cli.py:153
+msgid "touch"
+msgstr "touch"
+
+#: dragonfly_grammars/cli.py:154
+msgid "python"
+msgstr "python"
+
+#: dragonfly_grammars/cli.py:155
+msgid "H top"
+msgstr "H top"
+
+#: dragonfly_grammars/cli.py:156
+msgid "kill"
+msgstr "kill"
+
+#: dragonfly_grammars/cli.py:157
+msgid "alsa mixer"
+msgstr "alsa mixer"
+
+#: dragonfly_grammars/cli.py:158
+msgid "Q jack"
+msgstr "Q jack"
+
+#: dragonfly_grammars/cli.py:159
+msgid "Q synth"
+msgstr "Q synth"
+
+#: dragonfly_grammars/cli.py:160
+msgid "H G status"
+msgstr "H G status"
+
+#: dragonfly_grammars/cli.py:161
+msgid "H G add"
+msgstr "H G add"
+
+#: dragonfly_grammars/cli.py:162
+msgid "H G commit"
+msgstr "H G commit"
+
+#: dragonfly_grammars/cli.py:163
+msgid "H G push"
+msgstr "H G push"
+
+#: dragonfly_grammars/cli.py:164
+msgid "H G log"
+msgstr "H G log"
+
+#: dragonfly_grammars/cli.py:165
+msgid "H G diff[erence]"
+msgstr "H G diff[erence]"
+
+#: dragonfly_grammars/cli.py:166
+msgid "H G clone"
+msgstr "H G clone"
+
+#: dragonfly_grammars/cli.py:167
+msgid "scan [first]"
+msgstr "scan [first]"
+
+#: dragonfly_grammars/cli.py:168
+msgid "scan second"
+msgstr "scan second"
+
+#: dragonfly_grammars/cli.py:169
+msgid "git status"
+msgstr "git status"
+
+#: dragonfly_grammars/cli.py:170
+msgid "git add"
+msgstr "git add"
+
+#: dragonfly_grammars/cli.py:171
+msgid "git commit"
+msgstr "git commit"
+
+#: dragonfly_grammars/cli.py:172
+msgid "git push"
+msgstr "git push"
+
+#: dragonfly_grammars/cli.py:173
+msgid "git log"
+msgstr "git log"
+
+#: dragonfly_grammars/cli.py:174
+msgid "git diff[erence]"
+msgstr "git diff[erence]"
+
+#: dragonfly_grammars/cli.py:175
+msgid "git clone"
+msgstr "git clone"
+
+#: dragonfly_grammars/cli.py:176
+msgid "untar"
+msgstr "untar"
+
+#: dragonfly_grammars/cli.py:177
+msgid "telegram"
+msgstr "telegram"
+
+#: dragonfly_grammars/cli.py:178
 msgid "firefox"
 msgstr "firefox"
 
-#: dragonfly_grammars/cli.py:110
+#: dragonfly_grammars/cli.py:179
 msgid "print working directory"
 msgstr "print working directory"
 
-#: dragonfly_grammars/cli.py:111
+#: dragonfly_grammars/cli.py:180
 msgid "password gorilla"
 msgstr "password gorilla"
 
-#: dragonfly_grammars/cli.py:121
+#: dragonfly_grammars/cli.py:190
 msgid "command <command>"
 msgstr "<command>"
 
@@ -423,107 +623,107 @@ msgstr "cap <lowercase_letter>"
 msgid "spell <characters>"
 msgstr "spell <characters>"
 
-#: dragonfly_grammars/global_.py:196
-msgid "control"
-msgstr "control"
-
-#: dragonfly_grammars/global_.py:197
-msgid "shift"
-msgstr "shift"
-
-#: dragonfly_grammars/global_.py:198
-msgid "alt"
-msgstr "alt"
-
-#: dragonfly_grammars/global_.py:199
-msgid "(command|super)"
-msgstr "(command|super)"
-
-#: dragonfly_grammars/global_.py:208
+#: dragonfly_grammars/global_.py:193
 msgid "press [<modifiers>] <character>"
 msgstr "press [<modifiers>] <character>"
 
-#: dragonfly_grammars/global_.py:233
+#: dragonfly_grammars/global_.py:198
+msgid "control"
+msgstr "control"
+
+#: dragonfly_grammars/global_.py:199
+msgid "shift"
+msgstr "shift"
+
+#: dragonfly_grammars/global_.py:200
+msgid "alt"
+msgstr "alt"
+
+#: dragonfly_grammars/global_.py:201
+msgid "(command|super)"
+msgstr "(command|super)"
+
+#: dragonfly_grammars/global_.py:224
 msgid "escape"
 msgstr "escape"
 
-#: dragonfly_grammars/global_.py:234
+#: dragonfly_grammars/global_.py:225
 msgid "[<n>] backspace[s]"
 msgstr "[<n>] backspace[s]"
 
-#: dragonfly_grammars/global_.py:235
+#: dragonfly_grammars/global_.py:226
 msgid "[<n>] enter[s]"
 msgstr "[<n>] enter[s]"
 
-#: dragonfly_grammars/global_.py:236
+#: dragonfly_grammars/global_.py:227
 msgid "[<n>] tab[s]"
 msgstr "[<n>] tab[s]"
 
-#: dragonfly_grammars/global_.py:237
+#: dragonfly_grammars/global_.py:228
 msgid "[<n>] space[s]"
 msgstr "[<n>] space[s]"
 
-#: dragonfly_grammars/global_.py:238
+#: dragonfly_grammars/global_.py:229
 msgid "[<n>] delete[s]"
 msgstr "[<n>] delete[s]"
 
-#: dragonfly_grammars/global_.py:240
+#: dragonfly_grammars/global_.py:231
 msgid "go [<n>] up"
 msgstr "go [<n>] up"
 
-#: dragonfly_grammars/global_.py:241
+#: dragonfly_grammars/global_.py:232
 msgid "go [<n>] down"
 msgstr "go [<n>] down"
 
-#: dragonfly_grammars/global_.py:242
+#: dragonfly_grammars/global_.py:233
 msgid "go [<n>] left"
 msgstr "go [<n>] left"
 
-#: dragonfly_grammars/global_.py:243
+#: dragonfly_grammars/global_.py:234
 msgid "go [<n>] right"
 msgstr "go [<n>] right"
 
-#: dragonfly_grammars/global_.py:244
+#: dragonfly_grammars/global_.py:235
 msgid "(go home|go to start)"
 msgstr "(go home|go to start)"
 
-#: dragonfly_grammars/global_.py:245
+#: dragonfly_grammars/global_.py:236
 msgid "go [to] end"
 msgstr "go [to] end"
 
-#: dragonfly_grammars/global_.py:246
+#: dragonfly_grammars/global_.py:237
 msgid "go [<n>] page[s] up"
 msgstr "go [<n>] page[s] up"
 
-#: dragonfly_grammars/global_.py:247
+#: dragonfly_grammars/global_.py:238
 msgid "go [<n>] page[s] down"
 msgstr "go [<n>] page[s] down"
 
-#: dragonfly_grammars/global_.py:276
+#: dragonfly_grammars/global_.py:269
 msgid "snake [case]"
 msgstr "snake [case]"
 
-#: dragonfly_grammars/global_.py:277
+#: dragonfly_grammars/global_.py:270
 msgid "camel [case]"
 msgstr "camel [case]"
 
-#: dragonfly_grammars/global_.py:278
+#: dragonfly_grammars/global_.py:271
 msgid "mixed [case]"
 msgstr "mixed [case]"
 
-#: dragonfly_grammars/global_.py:279
+#: dragonfly_grammars/global_.py:272
 msgid "upper[case]"
 msgstr "upper[case]"
 
-#: dragonfly_grammars/global_.py:280
+#: dragonfly_grammars/global_.py:273
 msgid "no case"
 msgstr "no case"
 
-#: dragonfly_grammars/global_.py:281
+#: dragonfly_grammars/global_.py:274
 msgid "sentence"
 msgstr "sentence"
 
-#: dragonfly_grammars/global_.py:282
+#: dragonfly_grammars/global_.py:275
 msgid "dictate"
 msgstr "dictate"
 

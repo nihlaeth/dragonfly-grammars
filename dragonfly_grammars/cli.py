@@ -100,12 +100,81 @@ class SshRule(CompoundRule):
     def _process_recognition(self, node, extras):
         self.value(node).execute()
 
+class SudoRule(CompoundRule):
+
+    """Superuser do commands."""
+
+    exported = False
+
+    def __init__(self, *args, **kwargs):
+        self.spec = _("sudo <command>")
+        self.extras = [
+            RuleRef(name='command', rule=Command()),
+            ]
+        CompoundRule.__init__(self, *args, **kwargs)
+
+    def value(self, node):
+        return Text('sudo ') + node.get_child_by_name(
+            'command').value()
+
+    def _process_recognition(self, node, extras):
+        self.value(node).execute()
+
 class SimpleCommand(MappingRule):
 
     """Commands that generally don't need arguments."""
 
     def __init__(self, *args, **kwargs):
         self.mapping = {
+            _("swich user"): Text("su -"),
+            _("change directory"): Text("cd "),
+            _("foreground"): Text("fg"),
+            _("list"): Text("ls"),
+            _("list all"): Text("ls -la"),
+            _("remove"): Text("rm "),
+            _("remove directory"): Text("rm -r "),
+            _("make directory"): Text("mkdir "),
+            _("move"): Text("mv "),
+            _("link"): Text("ln -s "),
+            _("screen"): Text("screen"),
+            _("attach screen"): Text("screen -x "),
+            _("disk usage"): Text("du -c -h -d1"),
+            _("disc find"): Text("df -h"),
+            _("service"): Text("/etc/rc.d/rc."),
+            _("process grep"): Text("pgrep "),
+            _("process kill"): Text("pkill -KILL"),
+            _("grep"): Text("grep "),
+            _("web get"): Text("wget "),
+            _("secure copy"): Text("scp "),
+            _("secure copy directory"): Text("scp -r "),
+            _("copy"): Text("cp"),
+            _("copy directory"): Text("cp -r "),
+            _("(edit|vim)"): Text("vim "),
+            _("touch"): Text("touch "),
+            _("python"): Text("python "),
+            _("H top"): Text("htop"),
+            _("kill"): Text("kill -sKILL "),
+            _("alsa mixer"): Text("alsamixer"),
+            _("Q jack"): Text("qjackctl"),
+            _("Q synth"): Text("qsynth"),
+            _("H G status"): Text("hg status"),
+            _("H G add"): Text("hg add "),
+            _("H G commit"): Text('hg commit -m "'),
+            _("H G push"): Text("hg push"),
+            _("H G log"): Text("hg log"),
+            _("H G diff[erence]"): Text("hg diff"),
+            _("H G clone"): Text("hg clone"),
+            _("scan [first]"): Text("scan"),
+            _("scan second"): Text("scan2"),
+            _("git status"): Text("git status"),
+            _("git add"): Text("git add "),
+            _("git commit"): Text('git commit -m "'),
+            _("git push"): Text("git push"),
+            _("git log"): Text("git log"),
+            _("git diff[erence]"): Text("git diff"),
+            _("git clone"): Text("git clone "),
+            _("untar"): Text("tar -xvf "),
+            _("telegram"): Text("Telegram"),
             _('firefox'): Text('firefox'),
             _('print working directory'): Text('pwd'),
             _('password gorilla'): Text('passwordgorilla')}
@@ -138,6 +207,7 @@ def load():
         context=terminal_not_vim())
     GRAMMAR.add_rule(SshRule())
     GRAMMAR.add_rule(SimpleCommand())
+    GRAMMAR.add_rule(SudoRule())
     GRAMMAR.load()
 
     print 'cli grammar: Loaded.'
